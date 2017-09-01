@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>符静的个人博客</title>
+  <title>豆瓣Vue搭建踩坑 | 符静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="符静的个人博客">
-<meta property="og:url" content="https://fujingfj.github.io/index.html">
+  <meta name="description" content="computed  计算后属性会被添加到vue实例中，可以直接用vue.属性名调用   computed: {       attr: function(){           return xxx       }   }       vuex 中的getters 可以当成store的计算属性   vuex 的初步用法 安装vuex  npm install vuex --save --dev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="豆瓣Vue搭建踩坑">
+<meta property="og:url" content="https://fujingfj.github.io/2017/09/01/豆瓣Vue搭建踩坑/index.html">
 <meta property="og:site_name" content="符静的个人博客">
+<meta property="og:description" content="computed  计算后属性会被添加到vue实例中，可以直接用vue.属性名调用   computed: {       attr: function(){           return xxx       }   }       vuex 中的getters 可以当成store的计算属性   vuex 的初步用法 安装vuex  npm install vuex --save --dev">
+<meta property="og:updated_time" content="2017-09-01T01:34:06.778Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="符静的个人博客">
+<meta name="twitter:title" content="豆瓣Vue搭建踩坑">
+<meta name="twitter:description" content="computed  计算后属性会被添加到vue实例中，可以直接用vue.属性名调用   computed: {       attr: function(){           return xxx       }   }       vuex 中的getters 可以当成store的计算属性   vuex 的初步用法 安装vuex  npm install vuex --save --dev">
   
     <link rel="alternate" href="/atom.xml" title="符静的个人博客" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-豆瓣Vue搭建踩坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-豆瓣Vue搭建踩坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/01/豆瓣Vue搭建踩坑/" class="article-date">
   <time datetime="2017-09-01T01:33:35.000Z" itemprop="datePublished">2017-09-01</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/01/豆瓣Vue搭建踩坑/">豆瓣Vue搭建踩坑</a>
+    <h1 class="article-title" itemprop="name">
+      豆瓣Vue搭建踩坑
     </h1>
   
 
@@ -185,94 +187,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-测试" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/29/测试/" class="article-date">
-  <time datetime="2017-08-29T08:25:41.000Z" itemprop="datePublished">2017-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/29/测试/">测试</a>
-    </h1>
+    <a href="/2017/08/29/测试/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">测试</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/08/29/测试/" data-id="cj717i2um0001q8hqn779yzko" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Markdoen-测试" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/28/Markdoen-测试/" class="article-date">
-  <time datetime="2017-08-28T09:07:11.000Z" itemprop="datePublished">2017-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/28/Markdoen-测试/">Markdown 测试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
-<p><em>斜体</em> 或 <em>斜体</em><br><strong>粗体</strong><br><strong><em>加粗斜体</em></strong><br><del>删除线</del></p>
-<hr>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ol>
-<li>这是一个<a href="http://baidu.com" target="_blank" rel="external">链接</a></li>
-<li>锚点 只支持标题后添加锚点<ul>
-<li>只支持标题后添加锚点</li>
-</ul>
-<hr>
-</li>
-</ol>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="/img/062002.png" alt="&#39;图片&#39;"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/08/28/Markdoen-测试/" data-id="cj717i2u40000q8hqnd67ia17" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         

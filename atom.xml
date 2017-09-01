@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-01T01:25:55.874Z</updated>
+  <updated>2017-09-01T01:34:06.778Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>豆瓣网站搭建Vue踩坑</title>
-    <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAVue%E8%B8%A9%E5%9D%91/"/>
-    <id>https://fujingfj.github.io/2017/08/31/豆瓣网站搭建Vue踩坑/</id>
-    <published>2017-08-31T14:25:14.000Z</published>
-    <updated>2017-09-01T01:25:55.874Z</updated>
+    <title>豆瓣Vue搭建踩坑</title>
+    <link href="https://fujingfj.github.io/2017/09/01/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/"/>
+    <id>https://fujingfj.github.io/2017/09/01/豆瓣Vue搭建踩坑/</id>
+    <published>2017-09-01T01:33:35.000Z</published>
+    <updated>2017-09-01T01:34:06.778Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>computed <ul>
