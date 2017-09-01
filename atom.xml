@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-01T01:36:49.547Z</updated>
+  <updated>2017-09-01T11:40:15.105Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -16,19 +16,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>新测试</title>
-    <link href="https://fujingfj.github.io/2017/09/01/%E6%96%B0%E6%B5%8B%E8%AF%95/"/>
-    <id>https://fujingfj.github.io/2017/09/01/新测试/</id>
-    <published>2017-09-01T01:35:50.000Z</published>
-    <updated>2017-09-01T01:36:49.547Z</updated>
+    <title>边写边学vue之二—————数据传递</title>
+    <link href="https://fujingfj.github.io/2017/09/01/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%BA%8C%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/"/>
+    <id>https://fujingfj.github.io/2017/09/01/边写边学vue之二—————数据传递/</id>
+    <published>2017-09-01T11:39:38.000Z</published>
+    <updated>2017-09-01T11:40:15.105Z</updated>
     
-    <content type="html"><![CDATA[<p>为什么传不上QAQ</p>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="1-fetch"><a href="#1-fetch" class="headerlink" title="1. fetch"></a>1. fetch</h3><ul>
+<li>原生不支持跨域，需要设置后端代理</li>
+<li>虽然设置了<code>{mode:&#39;no-cors&#39;}</code>不会报错，但结果会返回<code>type:&quot;opaque&quot;,ok: &#39;false&#39;</code>表明没有权限访问</li>
+<li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 链接页面 --&gt;</div><div class="line">fetch(&apos;url&apos;)</div><div class="line">&lt;!-- 处理数据并返回，千万不要忘记return  --&gt;</div><div class="line">.then(res=&gt;return res.text())</div><div class="line">&lt;!-- 处理data --&gt;</div><div class="line">.then(data=&gt;console.log(data))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Jsonp"><a href="#2-Jsonp" class="headerlink" title="2.Jsonp"></a>2.Jsonp</h3><ol>
+<li>原理： script标签可以跨域访问，并且把返回的内容作为callback函数参数,可以对其进行处理</li>
+<li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 这里的data就是豆瓣API接口返回的数据 --&gt;</div><div class="line">var fn = function(data)&#123;</div><div class="line">    console.log(data)</div><div class="line">&#125;</div><div class="line">let search = document.createElement(&apos;script&apos;);//创建script标签</div><div class="line">search.src=&quot;https://api.douban.com/v2/book/search?q=虚构类&amp;callback=fn&quot;;//src引入链接，并通过fn对数据做处理</div><div class="line">document.body.appendChild(search)//添加到页面</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-mutation-和-action"><a href="#3-mutation-和-action" class="headerlink" title="3. mutation 和 action"></a>3. mutation 和 action</h3><ul>
+<li>都是对state数据的处理</li>
+<li>mutation 是同步的，用this.$store.commit提交</li>
+<li>action 是异步的，用this.$store.dispatch提交<ul>
+<li>dispatch提交了一个action,action处理完成之后再commit给mutation修改state</li>
+</ul>
+</li>
+<li>所以，最终的state修改都是mutation处理的</li>
+</ul>
+<h3 id="4-VueX中actions里的commit函数的参数解构形式"><a href="#4-VueX中actions里的commit函数的参数解构形式" class="headerlink" title="4.VueX中actions里的commit函数的参数解构形式"></a>4.VueX中actions里的commit函数的参数解构形式</h3><ol>
+<li><code>commit()</code> 可以传入mutations里的函数名的字符串，来确认提交一个mutation<br> <code>commit(&#39;fn&#39;)</code></li>
+<li><p>也可以传入一个对象，该对象t的type属性就是提交的mutation函数，其他属性可以自行设置,该对象作为mutation函数的第二个参数，可以在mutation里处理</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">commit(&#123;  </div><div class="line">    type: fn,  </div><div class="line">    key: value,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>actions提交mutation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//context是一个与store实例具有相同方法和属性的对象，通过调用context下的commit方法提交mutation</div><div class="line">actions: &#123;</div><div class="line">    fn(context)&#123;</div><div class="line">        context.commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 根据参数解构（传参对象的值可以直接使用）,这里函数内部只使用了context的commit属性，所以可以简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit:commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//进一步简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="5-asnyc-和-await"><a href="#5-asnyc-和-await" class="headerlink" title="5. asnyc 和 await"></a>5. asnyc 和 await</h3><ul>
+<li>解决异步问题</li>
+<li>写法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var fn = asnyc function()&#123;</div><div class="line">   await fn1</div><div class="line">   await fn2</div><div class="line">&#125;</div><div class="line">fn()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-Vue跨域"><a href="#6-Vue跨域" class="headerlink" title="6. Vue跨域"></a>6. Vue跨域</h3><ul>
+<li>webpack配置proxyTable的参数(在config目录下的index.js中)</li>
+<li><p>配置方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">    &apos;/api&apos;: &#123;</div><div class="line">        target: &apos;http://api.douban.com/v2&apos;,</div><div class="line">        changeOrigin: true,</div><div class="line">        pathRewrite: &#123;</div><div class="line">            &apos;^/api&apos;: &apos;&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用方法<br><code>/api/xxxxxx</code></p>
+</li>
+</ul>
+<h3 id="7-mapState"><a href="#7-mapState" class="headerlink" title="7. mapState"></a>7. mapState</h3><ul>
+<li>state 的辅助函数，生成计算属性，参数是一个对象，返回一个对象</li>
+<li>在通过computed传给计算属性</li>
+<li>通过…扩展运算符简写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//单组件引入mapstate</div><div class="line">import &#123;mapState&#125; from &quot;vuex&quot;</div><div class="line">computed: &#123;</div><div class="line">    ...mapState(&#123;</div><div class="line">         attr: state=&gt;state.attr </div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a=&gt;a</div><div class="line">//等同于</div><div class="line">function (a)&#123; return a &#125;</div><div class="line"></div><div class="line">ar f = () =&gt; 5;</div><div class="line">// 等同于</div><div class="line">var f = function () &#123; return 5 &#125;;</div><div class="line"></div><div class="line">var sum = (num1, num2) =&gt; num1 + num2;</div><div class="line">// 等同于</div><div class="line">var sum = function(num1, num2) &#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;为什么传不上QAQ&lt;/p&gt;
-
+      &lt;h3 id=&quot;1-fetch&quot;&gt;&lt;a href=&quot;#1-fetch&quot; class=&quot;headerlink&quot; title=&quot;1. fetch&quot;&gt;&lt;/a&gt;1. fetch&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;原生不支持跨域，需要设置后端代理&lt;/li&gt;
+&lt;li&gt;虽然设置了&lt;code&gt;{mode
     
     </summary>
     
@@ -37,77 +86,40 @@
   
   <entry>
     <title>豆瓣Vue搭建踩坑</title>
-    <link href="https://fujingfj.github.io/2017/09/01/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/"/>
-    <id>https://fujingfj.github.io/2017/09/01/豆瓣Vue搭建踩坑/</id>
-    <published>2017-09-01T01:33:35.000Z</published>
-    <updated>2017-09-01T01:34:06.778Z</updated>
+    <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91%E2%80%94%E2%80%94vuex/"/>
+    <id>https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑——vuex/</id>
+    <published>2017-08-31T01:33:35.000Z</published>
+    <updated>2017-09-01T07:35:49.135Z</updated>
     
-    <content type="html"><![CDATA[<ol>
-<li>computed <ul>
-<li>计算后属性会被添加到vue实例中，可以直接用<code>vue.属性名</code>调用<pre><code>
-  computed: {
-      attr: function(){
-          return xxx
-      }
-  }
-</code></pre>   </li>
-</ul>
-</li>
-<li>vuex 中的getters<ul>
-<li>可以当成store的计算属性</li>
-</ul>
-</li>
-<li>vuex 的初步用法<ul>
-<li>安装vuex<br>  <code>npm install vuex --save --dev</code></li>
-<li>在src目录下创建store文件夹，并创建index.js文件，文件内引入vuex  <pre><code>
-      import Vue from 'vue'
-      import Vuex from 'vuex'
-      Vue.use(Vuex)
-  </code></pre></li>
-</ul>
-</li>
+    <content type="html"><![CDATA[<h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><pre><code>- 计算后属性会被添加到vue实例中，可以直接用`vue.属性名`调用
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="2-vuex-中的getters"><a href="#2-vuex-中的getters" class="headerlink" title="2. vuex 中的getters"></a>2. vuex 中的getters</h3><pre><code>- 可以当成store的计算属性
+</code></pre><h3 id="3-vuex-的初步用法"><a href="#3-vuex-的初步用法" class="headerlink" title="3. vuex 的初步用法"></a>3. vuex 的初步用法</h3><pre><code>- 安装vuex  
+    `npm install vuex --save --dev`
+- 在src目录下创建store文件夹，并创建index.js文件，文件内引入vuex
+    &lt;pre&gt;&lt;code&gt;
+        import Vue from &apos;vue&apos;
+        import Vuex from &apos;vuex&apos;
+        Vue.use(Vuex)
+    &lt;/code&gt;&lt;/pre&gt;
+</code></pre><ol>
 <li><p>创建store</p>
- <pre><code>
- const store = new Vuex.Store({
-     state: {}, //数据对象
-     getters: {},//state派生出的数据，store的计算属性，类似于computed
-     mutations: {},//mutations触发会改变store的状态/state的数据
-     actions: {}//提交mutations的函数，触发mutations
- })
- </code></pre>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">    state: &#123;&#125;, //数据对象</div><div class="line">    getters: &#123;&#125;,//state派生出的数据，store的计算属性，类似于computed</div><div class="line">    mutations: &#123;&#125;,//mutations触发会改变store的状态/state的数据</div><div class="line">    actions: &#123;&#125;//提交mutations的函数，触发mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>main.js</code>的Vue实例中绑定store  </p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import store from &apos;./stote&apos;  </div><div class="line">new Vue(&#123;  </div><div class="line">    el: &apos;#app&apos;,  </div><div class="line">    router,  </div><div class="line">    store,//绑定到根实例中  </div><div class="line">    template: &apos; &lt;App/&gt;&apos;,  </div><div class="line">    components: &#123;App&#125;,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p>分割store模块，再统一导出</p>
 <ul>
-<li>可以在store目录下创建modules目录，分割模块，再在store目录下的index内导出，需要写在store的modules属性内<pre><code>
-  //index中
-  import example from './modules/example' 
-  export default new Vuex.store({
-      modules: { 
-          example
-      }
-      })
-  //example中,把模块当成一个对象导出到index里，再右index中的module接收管理 
-  const state = {
-      a: xx,
-      b:xx,
-  }
-  export default {
-      state
-  }
-</code></pre>
-
+<li>可以在store目录下创建modules目录，分割模块，再在store目录下的index内导出，需要写在store的modules属性内<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//index中</div><div class="line">import example from &apos;./modules/example&apos; </div><div class="line">export default new Vuex.store(&#123;</div><div class="line">    modules: &#123; </div><div class="line">        example</div><div class="line">    &#125;</div><div class="line">    &#125;)</div><div class="line">//example中,把模块当成一个对象导出到index里，再右index中的module接收管理 </div><div class="line">const state = &#123;</div><div class="line">    a: xx,</div><div class="line">    b:xx,</div><div class="line">&#125;</div><div class="line">export default &#123;</div><div class="line">    state</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <h3 id="Markdown-Tips"><a href="#Markdown-Tips" class="headerlink" title="Markdown Tips"></a>Markdown Tips</h3><ul>
-<li>代码块用<code>&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</code>包裹</li>
 <li>有序列表子项之间记得Tab缩进，不然会影响列表排序</li>
 <li>单行代码用``包裹，换行直接在上一行结尾多加两个空格就行</li>
-<li>标题下换行再直接缩进也可以引用代码块</li>
+<li>标题下直接缩进也可以引用代码块</li>
 <li>每行结尾后加两个空格，就是换行</li>
 </ul>
 <h3 id="router-link-to"><a href="#router-link-to" class="headerlink" title="router-link :to"></a>router-link :to</h3><ul>
@@ -138,12 +150,7 @@
     
     <summary type="html">
     
-      &lt;ol&gt;
-&lt;li&gt;computed &lt;ul&gt;
-&lt;li&gt;计算后属性会被添加到vue实例中，可以直接用&lt;code&gt;vue.属性名&lt;/code&gt;调用&lt;pre&gt;&lt;code&gt;
-  computed: {
-      attr: function(){
-          return xx
+      &lt;h3 id=&quot;1-computed&quot;&gt;&lt;a href=&quot;#1-computed&quot; class=&quot;headerlink&quot; title=&quot;1. computed&quot;&gt;&lt;/a&gt;1. computed&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 计算后属性会被添加到vue实例中，可以直接用`vue
     
     </summary>
     
@@ -151,17 +158,72 @@
   </entry>
   
   <entry>
-    <title>测试</title>
-    <link href="https://fujingfj.github.io/2017/08/29/%E6%B5%8B%E8%AF%95/"/>
-    <id>https://fujingfj.github.io/2017/08/29/测试/</id>
-    <published>2017-08-29T08:25:41.000Z</published>
-    <updated>2017-08-29T08:25:52.368Z</updated>
+    <title>豆瓣Vue搭建踩坑</title>
+    <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/"/>
+    <id>https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/</id>
+    <published>2017-08-31T01:33:35.000Z</published>
+    <updated>2017-09-01T07:36:19.816Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><pre><code>- 计算后属性会被添加到vue实例中，可以直接用`vue.属性名`调用
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="2-vuex-中的getters"><a href="#2-vuex-中的getters" class="headerlink" title="2. vuex 中的getters"></a>2. vuex 中的getters</h3><pre><code>- 可以当成store的计算属性
+</code></pre><h3 id="3-vuex-的初步用法"><a href="#3-vuex-的初步用法" class="headerlink" title="3. vuex 的初步用法"></a>3. vuex 的初步用法</h3><pre><code>- 安装vuex  
+    `npm install vuex --save --dev`
+- 在src目录下创建store文件夹，并创建index.js文件，文件内引入vuex
+    &lt;pre&gt;&lt;code&gt;
+        import Vue from &apos;vue&apos;
+        import Vuex from &apos;vuex&apos;
+        Vue.use(Vuex)
+    &lt;/code&gt;&lt;/pre&gt;
+</code></pre><ol>
+<li><p>创建store</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">    state: &#123;&#125;, //数据对象</div><div class="line">    getters: &#123;&#125;,//state派生出的数据，store的计算属性，类似于computed</div><div class="line">    mutations: &#123;&#125;,//mutations触发会改变store的状态/state的数据</div><div class="line">    actions: &#123;&#125;//提交mutations的函数，触发mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>main.js</code>的Vue实例中绑定store  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import store from &apos;./stote&apos;  </div><div class="line">new Vue(&#123;  </div><div class="line">    el: &apos;#app&apos;,  </div><div class="line">    router,  </div><div class="line">    store,//绑定到根实例中  </div><div class="line">    template: &apos; &lt;App/&gt;&apos;,  </div><div class="line">    components: &#123;App&#125;,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>分割store模块，再统一导出</p>
+<ul>
+<li>可以在store目录下创建modules目录，分割模块，再在store目录下的index内导出，需要写在store的modules属性内<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//index中</div><div class="line">import example from &apos;./modules/example&apos; </div><div class="line">export default new Vuex.store(&#123;</div><div class="line">    modules: &#123; </div><div class="line">        example</div><div class="line">    &#125;</div><div class="line">    &#125;)</div><div class="line">//example中,把模块当成一个对象导出到index里，再右index中的module接收管理 </div><div class="line">const state = &#123;</div><div class="line">    a: xx,</div><div class="line">    b:xx,</div><div class="line">&#125;</div><div class="line">export default &#123;</div><div class="line">    state</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Markdown-Tips"><a href="#Markdown-Tips" class="headerlink" title="Markdown Tips"></a>Markdown Tips</h3><ul>
+<li>有序列表子项之间记得Tab缩进，不然会影响列表排序</li>
+<li>单行代码用``包裹，换行直接在上一行结尾多加两个空格就行</li>
+<li>标题下直接缩进也可以引用代码块</li>
+<li>每行结尾后加两个空格，就是换行</li>
+</ul>
+<h3 id="router-link-to"><a href="#router-link-to" class="headerlink" title="router-link :to"></a>router-link :to</h3><ul>
+<li>通过to属性指定目标地址，默认渲染为带正确连接的<code>&lt;a&gt;</code>标签</li>
+<li><p>to 后可带的值:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 字符串 --&gt;</div><div class="line">&lt;router-link to=&quot;home&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 渲染结果 --&gt;</div><div class="line">&lt;a href=&quot;home&quot;&gt;Home&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;!-- 使用 v-bind 的 JS 表达式 --&gt;</div><div class="line">&lt;router-link v-bind:to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 不写 v-bind 也可以，就像绑定别的属性一样 --&gt;</div><div class="line">&lt;router-link :to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 同上 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;home&apos; &#125;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 命名的路由 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; name: &apos;user&apos;, params: &#123; userId: 123 &#125;&#125;&quot;&gt;User&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 带查询参数，下面的结果为 /register?plan=private --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;register&apos;, query: &#123; plan: &apos;private&apos; &#125;&#125;&quot;&gt;Register&lt;/router-link&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><ul>
+<li>引用单文件组件的时候，用标签标示</li>
+<li><p>子组件使用父组件的数据，需要设置子组件的props选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;child&apos;, &#123;</div><div class="line">// 声明 props</div><div class="line">props: [&apos;message&apos;],</div><div class="line">// 就像 data 一样，prop 可以用在模板内</div><div class="line">// 同样也可以在vm实例中像“this.message”这样使用</div><div class="line">template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>slot插口</p>
+<ul>
+<li>子组件中有<code>&lt;slot&gt;&lt;/slot&gt;</code>插口，会保留父组件在子组件中写入的内容</li>
+<li>具名slot<ul>
+<li>slot下有个name属性可以在父组件中配置对应的slot内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//父组件  </div><div class="line">&lt;app&gt;</div><div class="line">    &lt;h1 slot=&quot;header&quot;&gt;&lt;/h1&gt;</div><div class="line">    &lt;compotent&gt;&lt;/compotent&gt;</div><div class="line">&lt;/app&gt;  </div><div class="line">//子组件</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;slot name =&quot;header&quot;&gt;&lt;/slot&gt;</div><div class="line">    &lt;div&gt; content&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组件中引用本地图片，还是按照目录的顺序引用，就算子组件还会被别的组件引用。路径按照引入图片的组件的目录为准</p>
+</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h2&gt;
+      &lt;h3 id=&quot;1-computed&quot;&gt;&lt;a href=&quot;#1-computed&quot; class=&quot;headerlink&quot; title=&quot;1. computed&quot;&gt;&lt;/a&gt;1. computed&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 计算后属性会被添加到vue实例中，可以直接用`vue
     
     </summary>
     
