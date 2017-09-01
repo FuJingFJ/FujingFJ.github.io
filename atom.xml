@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-01T01:34:06.778Z</updated>
+  <updated>2017-09-01T01:36:49.547Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新测试</title>
+    <link href="https://fujingfj.github.io/2017/09/01/%E6%96%B0%E6%B5%8B%E8%AF%95/"/>
+    <id>https://fujingfj.github.io/2017/09/01/新测试/</id>
+    <published>2017-09-01T01:35:50.000Z</published>
+    <updated>2017-09-01T01:36:49.547Z</updated>
+    
+    <content type="html"><![CDATA[<p>为什么传不上QAQ</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为什么传不上QAQ&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>豆瓣Vue搭建踩坑</title>
