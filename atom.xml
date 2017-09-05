@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-01T11:40:15.105Z</updated>
+  <updated>2017-09-05T02:36:15.512Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>边写边学vue之二—————数据传递</title>
-    <link href="https://fujingfj.github.io/2017/09/01/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%BA%8C%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/"/>
-    <id>https://fujingfj.github.io/2017/09/01/边写边学vue之二—————数据传递/</id>
+    <title>页面布局——定宽+自适应宽</title>
+    <link href="https://fujingfj.github.io/2017/09/05/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E2%80%94%E2%80%94%E5%AE%9A%E5%AE%BD-%E8%87%AA%E9%80%82%E5%BA%94%E5%AE%BD/"/>
+    <id>https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/</id>
+    <published>2017-09-05T02:32:40.000Z</published>
+    <updated>2017-09-05T02:36:15.512Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-布局"><a href="#1-布局" class="headerlink" title="1. 布局"></a>1. 布局</h2><ul>
+<li>左右宽度固定，中间自适应<ol>
+<li>设置基本样式</li>
+<li>中间自适应盒子设置宽度100%</li>
+<li>三个盒子均浮动 ，外层容器设置<code>overflow: hidden</code><br> //加图片01</li>
+<li>中间盒子设置左margin<code>margin-left: 盒子的宽度</code><br> //加图片02</li>
+<li>左边盒子设置<code>margin-left：-100%</code>,让中间的盒子浮上去<br> //加图片03</li>
+<li>中间盒子设置右margin <code>margin-right: -2*盒子的宽度</code>，让右边的盒子浮上去<blockquote>
+<p>这里，因为中间先设置了左margin，盒子已经往左偏移了，所以为了让右盒子能在页面浮上来，中间盒子需要设置右margin=-（左盒子宽度+右盒子宽度）<br> //加图片4</p>
+</blockquote>
+</li>
+<li>这时候，中间的盒子内容的右侧会被右侧的盒子遮挡，<br> //加图片5</li>
+<li>因为中间盒子的右侧，有负margin，需要把内容从右负margin里挤回来，以及盒子还因为左margin向左偏移，还需要再加上左边偏移，所以设置右padding = 左margin + 右margin ，同时设置<code>box-sizing：border-box</code><br> //加图片6</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-圣杯布局和双飞翼布局的异同"><a href="#2-圣杯布局和双飞翼布局的异同" class="headerlink" title="2. 圣杯布局和双飞翼布局的异同"></a>2. 圣杯布局和双飞翼布局的异同</h3><ul>
+<li>圣杯：<ul>
+<li>中间盒子为第一个div</li>
+<li>左侧margin-left: -100%,右侧： margin-left: 200px 。使三个盒子水平</li>
+<li>容器加左右padding，留出左右盒子的距离</li>
+<li>左右盒子加相对定位，负盒子宽度</li>
+</ul>
+</li>
+<li>双飞翼<ul>
+<li>三个盒子水平方式和圣杯一致</li>
+<li>中间层内嵌一个div，<code>class=&#39;main&#39;</code>,用来写内容</li>
+<li>.main的div给左右margin,使内容不被左右盒子遮盖</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-布局&quot;&gt;&lt;a href=&quot;#1-布局&quot; class=&quot;headerlink&quot; title=&quot;1. 布局&quot;&gt;&lt;/a&gt;1. 布局&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;左右宽度固定，中间自适应&lt;ol&gt;
+&lt;li&gt;设置基本样式&lt;/li&gt;
+&lt;li&gt;中间自适应盒子设置宽度100%&lt;/
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>边写边学vue之二———数据传递</title>
+    <link href="https://fujingfj.github.io/2017/09/01/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%BA%8C%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/"/>
+    <id>https://fujingfj.github.io/2017/09/01/边写边学vue之二——数据传递/</id>
     <published>2017-09-01T11:39:38.000Z</published>
-    <updated>2017-09-01T11:40:15.105Z</updated>
+    <updated>2017-09-01T11:49:43.483Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-fetch"><a href="#1-fetch" class="headerlink" title="1. fetch"></a>1. fetch</h3><ul>
 <li>原生不支持跨域，需要设置后端代理</li>
@@ -70,7 +122,19 @@
 <li>通过…扩展运算符简写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//单组件引入mapstate</div><div class="line">import &#123;mapState&#125; from &quot;vuex&quot;</div><div class="line">computed: &#123;</div><div class="line">    ...mapState(&#123;</div><div class="line">         attr: state=&gt;state.attr </div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a=&gt;a</div><div class="line">//等同于</div><div class="line">function (a)&#123; return a &#125;</div><div class="line"></div><div class="line">ar f = () =&gt; 5;</div><div class="line">// 等同于</div><div class="line">var f = function () &#123; return 5 &#125;;</div><div class="line"></div><div class="line">var sum = (num1, num2) =&gt; num1 + num2;</div><div class="line">// 等同于</div><div class="line">var sum = function(num1, num2) &#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><pre><code>a=&gt;a
+//等同于
+function (a){ return a }
+
+ar f = () =&gt; 5;
+// 等同于
+var f = function () { return 5 };
+
+var sum = (num1, num2) =&gt; num1 + num2;
+// 等同于
+var sum = function(num1, num2) {
+  return num1 + num2;
+};
 </code></pre>]]></content>
     
     <summary type="html">
@@ -86,83 +150,10 @@
   
   <entry>
     <title>豆瓣Vue搭建踩坑</title>
-    <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91%E2%80%94%E2%80%94vuex/"/>
-    <id>https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑——vuex/</id>
+    <link href="https://fujingfj.github.io/2017/08/31/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%B8%80%E2%80%94%E2%80%94vuex/"/>
+    <id>https://fujingfj.github.io/2017/08/31/边写边学vue之一——vuex/</id>
     <published>2017-08-31T01:33:35.000Z</published>
     <updated>2017-09-01T07:35:49.135Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><pre><code>- 计算后属性会被添加到vue实例中，可以直接用`vue.属性名`调用
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h3 id="2-vuex-中的getters"><a href="#2-vuex-中的getters" class="headerlink" title="2. vuex 中的getters"></a>2. vuex 中的getters</h3><pre><code>- 可以当成store的计算属性
-</code></pre><h3 id="3-vuex-的初步用法"><a href="#3-vuex-的初步用法" class="headerlink" title="3. vuex 的初步用法"></a>3. vuex 的初步用法</h3><pre><code>- 安装vuex  
-    `npm install vuex --save --dev`
-- 在src目录下创建store文件夹，并创建index.js文件，文件内引入vuex
-    &lt;pre&gt;&lt;code&gt;
-        import Vue from &apos;vue&apos;
-        import Vuex from &apos;vuex&apos;
-        Vue.use(Vuex)
-    &lt;/code&gt;&lt;/pre&gt;
-</code></pre><ol>
-<li><p>创建store</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">    state: &#123;&#125;, //数据对象</div><div class="line">    getters: &#123;&#125;,//state派生出的数据，store的计算属性，类似于computed</div><div class="line">    mutations: &#123;&#125;,//mutations触发会改变store的状态/state的数据</div><div class="line">    actions: &#123;&#125;//提交mutations的函数，触发mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>main.js</code>的Vue实例中绑定store  </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import store from &apos;./stote&apos;  </div><div class="line">new Vue(&#123;  </div><div class="line">    el: &apos;#app&apos;,  </div><div class="line">    router,  </div><div class="line">    store,//绑定到根实例中  </div><div class="line">    template: &apos; &lt;App/&gt;&apos;,  </div><div class="line">    components: &#123;App&#125;,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>分割store模块，再统一导出</p>
-<ul>
-<li>可以在store目录下创建modules目录，分割模块，再在store目录下的index内导出，需要写在store的modules属性内<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//index中</div><div class="line">import example from &apos;./modules/example&apos; </div><div class="line">export default new Vuex.store(&#123;</div><div class="line">    modules: &#123; </div><div class="line">        example</div><div class="line">    &#125;</div><div class="line">    &#125;)</div><div class="line">//example中,把模块当成一个对象导出到index里，再右index中的module接收管理 </div><div class="line">const state = &#123;</div><div class="line">    a: xx,</div><div class="line">    b:xx,</div><div class="line">&#125;</div><div class="line">export default &#123;</div><div class="line">    state</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="Markdown-Tips"><a href="#Markdown-Tips" class="headerlink" title="Markdown Tips"></a>Markdown Tips</h3><ul>
-<li>有序列表子项之间记得Tab缩进，不然会影响列表排序</li>
-<li>单行代码用``包裹，换行直接在上一行结尾多加两个空格就行</li>
-<li>标题下直接缩进也可以引用代码块</li>
-<li>每行结尾后加两个空格，就是换行</li>
-</ul>
-<h3 id="router-link-to"><a href="#router-link-to" class="headerlink" title="router-link :to"></a>router-link :to</h3><ul>
-<li>通过to属性指定目标地址，默认渲染为带正确连接的<code>&lt;a&gt;</code>标签</li>
-<li><p>to 后可带的值:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 字符串 --&gt;</div><div class="line">&lt;router-link to=&quot;home&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 渲染结果 --&gt;</div><div class="line">&lt;a href=&quot;home&quot;&gt;Home&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;!-- 使用 v-bind 的 JS 表达式 --&gt;</div><div class="line">&lt;router-link v-bind:to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 不写 v-bind 也可以，就像绑定别的属性一样 --&gt;</div><div class="line">&lt;router-link :to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 同上 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;home&apos; &#125;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 命名的路由 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; name: &apos;user&apos;, params: &#123; userId: 123 &#125;&#125;&quot;&gt;User&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 带查询参数，下面的结果为 /register?plan=private --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;register&apos;, query: &#123; plan: &apos;private&apos; &#125;&#125;&quot;&gt;Register&lt;/router-link&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><ul>
-<li>引用单文件组件的时候，用标签标示</li>
-<li><p>子组件使用父组件的数据，需要设置子组件的props选项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;child&apos;, &#123;</div><div class="line">// 声明 props</div><div class="line">props: [&apos;message&apos;],</div><div class="line">// 就像 data 一样，prop 可以用在模板内</div><div class="line">// 同样也可以在vm实例中像“this.message”这样使用</div><div class="line">template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>slot插口</p>
-<ul>
-<li>子组件中有<code>&lt;slot&gt;&lt;/slot&gt;</code>插口，会保留父组件在子组件中写入的内容</li>
-<li>具名slot<ul>
-<li>slot下有个name属性可以在父组件中配置对应的slot内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//父组件  </div><div class="line">&lt;app&gt;</div><div class="line">    &lt;h1 slot=&quot;header&quot;&gt;&lt;/h1&gt;</div><div class="line">    &lt;compotent&gt;&lt;/compotent&gt;</div><div class="line">&lt;/app&gt;  </div><div class="line">//子组件</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;slot name =&quot;header&quot;&gt;&lt;/slot&gt;</div><div class="line">    &lt;div&gt; content&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>组件中引用本地图片，还是按照目录的顺序引用，就算子组件还会被别的组件引用。路径按照引入图片的组件的目录为准</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-computed&quot;&gt;&lt;a href=&quot;#1-computed&quot; class=&quot;headerlink&quot; title=&quot;1. computed&quot;&gt;&lt;/a&gt;1. computed&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 计算后属性会被添加到vue实例中，可以直接用`vue
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>豆瓣Vue搭建踩坑</title>
-    <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/"/>
-    <id>https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/</id>
-    <published>2017-08-31T01:33:35.000Z</published>
-    <updated>2017-09-01T07:36:19.816Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><pre><code>- 计算后属性会被添加到vue实例中，可以直接用`vue.属性名`调用
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
