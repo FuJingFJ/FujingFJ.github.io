@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-07T11:27:34.150Z</updated>
+  <updated>2017-09-19T11:49:45.122Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>radio的name属性</title>
+    <link href="https://fujingfj.github.io/2017/09/19/HTML%E5%9F%BA%E7%A1%80/"/>
+    <id>https://fujingfj.github.io/2017/09/19/HTML基础/</id>
+    <published>2017-09-19T11:44:07.000Z</published>
+    <updated>2017-09-19T11:49:45.122Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>“name” 对于单选按钮来说，是非常重要的属性，因为它表示了它属于哪个组。因为一组单选按钮表现为一个整体，你必须为所有相关的单选按钮指定一个共同的名称。当两个或更多单选按钮名称相同时，选择按钮之一会取消名称相同的其它按钮的选择。如果你在一个页面上，拥有超过一组单选按钮，不同组中的按钮必须拥有不同的名称属性。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;“name” 对于单选按钮来说，是非常重要的属性，因为它表示了它属于哪个组。因为一组单选按钮表现为一个整体，你必须为所有相关的单选按钮指定一个共同的名称。当两个或更多单选按钮名称相同时，选择按钮之一会取消名称相同的其它按钮的选择。如果你在一个页面上，拥有超过一组
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML基础</title>
+    <link href="https://fujingfj.github.io/2017/09/19/radio%E7%9A%84name%E5%B1%9E%E6%80%A7/"/>
+    <id>https://fujingfj.github.io/2017/09/19/radio的name属性/</id>
+    <published>2017-09-19T11:44:07.000Z</published>
+    <updated>2017-09-19T11:44:08.030Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>边写边学vue之三——链接</title>
