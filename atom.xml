@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-19T11:44:08.030Z</updated>
+  <updated>2017-09-20T13:10:09.179Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基础知识之href和样式覆盖</title>
+    <link href="https://fujingfj.github.io/2017/09/20/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B9%8Bhref%E5%92%8C%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96/"/>
+    <id>https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/</id>
+    <published>2017-09-20T13:09:16.000Z</published>
+    <updated>2017-09-20T13:10:09.179Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-简述一下src与href的区别"><a href="#1-简述一下src与href的区别" class="headerlink" title="1. 简述一下src与href的区别"></a>1. 简述一下src与href的区别</h2><ul>
+<li><p>href 是指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，用于超链接。</p>
+</li>
+<li><p>src是指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。</p>
+</li>
+</ul>
+<h2 id="2-重复样式css加载先后区别"><a href="#2-重复样式css加载先后区别" class="headerlink" title="2. 重复样式css加载先后区别"></a>2. 重复样式css加载先后区别</h2><ul>
+<li>如果元素有多个类名，类名前后不影响覆盖，重复的样式只会按照样式声明时的前后覆盖，后面覆盖前面。即如果类名在前，css样式后写，也会覆盖掉前面的。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-简述一下src与href的区别&quot;&gt;&lt;a href=&quot;#1-简述一下src与href的区别&quot; class=&quot;headerlink&quot; title=&quot;1. 简述一下src与href的区别&quot;&gt;&lt;/a&gt;1. 简述一下src与href的区别&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p
+    
+    </summary>
+    
+    
+      <category term="基础知识" scheme="https://fujingfj.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML基础</title>
