@@ -8,10 +8,10 @@
   <meta name="description" content="1. fetch 原生不支持跨域，需要设置后端代理 虽然设置了{mode:&amp;#39;no-cors&amp;#39;}不会报错，但结果会返回type:&amp;quot;opaque&amp;quot;,ok: &amp;#39;false&amp;#39;表明没有权限访问 写法123456&amp;lt;!-- 链接页面 --&amp;gt;fetch(&amp;apos;url&amp;apos;)&amp;lt;!-- 处理数据并返回，千万不要忘记return  --&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="边写边学vue之二———数据传递">
-<meta property="og:url" content="https://fujingfj.github.io/2017/09/01/边写边学vue之二——数据传递/index.html">
+<meta property="og:url" content="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/index.html">
 <meta property="og:site_name" content="符静的个人博客">
 <meta property="og:description" content="1. fetch 原生不支持跨域，需要设置后端代理 虽然设置了{mode:&amp;#39;no-cors&amp;#39;}不会报错，但结果会返回type:&amp;quot;opaque&amp;quot;,ok: &amp;#39;false&amp;#39;表明没有权限访问 写法123456&amp;lt;!-- 链接页面 --&amp;gt;fetch(&amp;apos;url&amp;apos;)&amp;lt;!-- 处理数据并返回，千万不要忘记return  --&amp;">
-<meta property="og:updated_time" content="2017-09-01T11:49:43.483Z">
+<meta property="og:updated_time" content="2017-09-25T13:48:17.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="边写边学vue之二———数据传递">
 <meta name="twitter:description" content="1. fetch 原生不支持跨域，需要设置后端代理 虽然设置了{mode:&amp;#39;no-cors&amp;#39;}不会报错，但结果会返回type:&amp;quot;opaque&amp;quot;,ok: &amp;#39;false&amp;#39;表明没有权限访问 写法123456&amp;lt;!-- 链接页面 --&amp;gt;fetch(&amp;apos;url&amp;apos;)&amp;lt;!-- 处理数据并返回，千万不要忘记return  --&amp;">
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fujingfj.github.io"></form>
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-边写边学vue之二——数据传递" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-边写边学vue之二———数据传递" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/01/边写边学vue之二——数据传递/" class="article-date">
-  <time datetime="2017-09-01T11:39:38.000Z" itemprop="datePublished">2017-09-01</time>
+    <a href="/2017/09/01/边写边学vue之二———数据传递/" class="article-date">
+  <time datetime="2017-09-01T13:35:33.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     
   </div>
@@ -91,7 +91,7 @@
 <li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 链接页面 --&gt;</div><div class="line">fetch(&apos;url&apos;)</div><div class="line">&lt;!-- 处理数据并返回，千万不要忘记return  --&gt;</div><div class="line">.then(res=&gt;return res.text())</div><div class="line">&lt;!-- 处理data --&gt;</div><div class="line">.then(data=&gt;console.log(data))</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="2-Jsonp"><a href="#2-Jsonp" class="headerlink" title="2.Jsonp"></a>2.Jsonp</h3><ol>
+<h3 id="2-Jsonp"><a href="#2-Jsonp" class="headerlink" title="2. Jsonp"></a>2. Jsonp</h3><ol>
 <li>原理： script标签可以跨域访问，并且把返回的内容作为callback函数参数,可以对其进行处理</li>
 <li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 这里的data就是豆瓣API接口返回的数据 --&gt;</div><div class="line">var fn = function(data)&#123;</div><div class="line">    console.log(data)</div><div class="line">&#125;</div><div class="line">let search = document.createElement(&apos;script&apos;);//创建script标签</div><div class="line">search.src=&quot;https://api.douban.com/v2/book/search?q=虚构类&amp;callback=fn&quot;;//src引入链接，并通过fn对数据做处理</div><div class="line">document.body.appendChild(search)//添加到页面</div></pre></td></tr></table></figure>
 </li>
@@ -105,10 +105,11 @@
 </li>
 <li>所以，最终的state修改都是mutation处理的</li>
 </ul>
-<h3 id="4-VueX中actions里的commit函数的参数解构形式"><a href="#4-VueX中actions里的commit函数的参数解构形式" class="headerlink" title="4.VueX中actions里的commit函数的参数解构形式"></a>4.VueX中actions里的commit函数的参数解构形式</h3><ol>
-<li><code>commit()</code> 可以传入mutations里的函数名的字符串，来确认提交一个mutation<br> <code>commit(&#39;fn&#39;)</code></li>
+<h3 id="4-VueX中actions里的commit函数的参数解构形式"><a href="#4-VueX中actions里的commit函数的参数解构形式" class="headerlink" title="4. VueX中actions里的commit函数的参数解构形式"></a>4. VueX中actions里的commit函数的参数解构形式</h3><ol>
+<li><p><code>commit()</code>可以传入mutations里的函数名的字符串，来确认提交一个mutation<br><code>commit(&#39;fn&#39;)</code></p>
+</li>
 <li><p>也可以传入一个对象，该对象t的type属性就是提交的mutation函数，其他属性可以自行设置,该对象作为mutation函数的第二个参数，可以在mutation里处理</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">commit(&#123;  </div><div class="line">    type: fn,  </div><div class="line">    key: value,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">commit(&#123;  </div><div class="line">    type: fn,  </div><div class="line">    key: value,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p>actions提交mutation</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//context是一个与store实例具有相同方法和属性的对象，通过调用context下的commit方法提交mutation</div><div class="line">actions: &#123;</div><div class="line">    fn(context)&#123;</div><div class="line">        context.commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 根据参数解构（传参对象的值可以直接使用）,这里函数内部只使用了context的commit属性，所以可以简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit:commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//进一步简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -124,7 +125,7 @@
 <li><p>配置方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">    &apos;/api&apos;: &#123;</div><div class="line">        target: &apos;http://api.douban.com/v2&apos;,</div><div class="line">        changeOrigin: true,</div><div class="line">        pathRewrite: &#123;</div><div class="line">            &apos;^/api&apos;: &apos;&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>调用方法<br><code>/api/xxxxxx</code></p>
+<li><p>调用方法<br>  <code>/api/xxxxxx</code></p>
 </li>
 </ul>
 <h3 id="7-mapState"><a href="#7-mapState" class="headerlink" title="7. mapState"></a>7. mapState</h3><ul>
@@ -133,24 +134,11 @@
 <li>通过…扩展运算符简写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//单组件引入mapstate</div><div class="line">import &#123;mapState&#125; from &quot;vuex&quot;</div><div class="line">computed: &#123;</div><div class="line">    ...mapState(&#123;</div><div class="line">         attr: state=&gt;state.attr </div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><pre><code>a=&gt;a
-//等同于
-function (a){ return a }
-
-ar f = () =&gt; 5;
-// 等同于
-var f = function () { return 5 };
-
-var sum = (num1, num2) =&gt; num1 + num2;
-// 等同于
-var sum = function(num1, num2) {
-  return num1 + num2;
-};
-</code></pre>
+<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a=&gt;a</div><div class="line">//等同于</div><div class="line">function (a)&#123; return a &#125;</div><div class="line"></div><div class="line">ar f = () =&gt; 5;</div><div class="line">// 等同于</div><div class="line">var f = function () &#123; return 5 &#125;;</div><div class="line"></div><div class="line">var sum = (num1, num2) =&gt; num1 + num2;</div><div class="line">// 等同于</div><div class="line">var sum = function(num1, num2) &#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二——数据传递/" data-id="cj7t3lmkh0005fshqdb04wfvu" class="article-share-link">Delen</a>
+      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj809f4kh0005tkhqcg5953gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +148,7 @@ var sum = function(num1, num2) {
 <nav id="article-nav">
   
     <a href="/2017/09/05/页面布局——定宽-自适应宽/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nieuwer</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           页面布局——定宽+自适应宽
@@ -169,8 +157,8 @@ var sum = function(num1, num2) {
     </a>
   
   
-    <a href="/2017/08/31/边写边学vue之一——vuex/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+    <a href="/2017/08/31/豆瓣Vue搭建踩坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">豆瓣Vue搭建踩坑</div>
     </a>
   
@@ -188,9 +176,9 @@ var sum = function(num1, num2) {
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化-webpack/">模块化  webpack</a></li></ul>
     </div>
   </div>
 
@@ -200,14 +188,14 @@ var sum = function(num1, num2) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a>
+      <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/模块化-webpack/" style="font-size: 10px;">模块化  webpack</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
     </div>
@@ -217,16 +205,16 @@ var sum = function(num1, num2) {
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/09/20/基础知识之href和样式覆盖/">基础知识之href和样式覆盖</a>
+            <a href="/2017/09/25/前端模块化简述/">前端模块化简述</a>
           </li>
         
           <li>
-            <a href="/2017/09/19/radio的name属性/">HTML基础</a>
+            <a href="/2017/09/20/基础知识之href和样式覆盖/">基础知识之href和样式覆盖</a>
           </li>
         
           <li>
@@ -238,7 +226,7 @@ var sum = function(num1, num2) {
           </li>
         
           <li>
-            <a href="/2017/09/01/边写边学vue之二——数据传递/">边写边学vue之二———数据传递</a>
+            <a href="/2017/09/01/边写边学vue之二———数据传递/">边写边学vue之二———数据传递</a>
           </li>
         
       </ul>

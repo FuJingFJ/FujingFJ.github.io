@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/9 | 符静的个人博客</title>
+  <title>前端模块化简述 | 符静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="符静的个人博客">
-<meta property="og:url" content="https://fujingfj.github.io/archives/2017/09/index.html">
+  <meta name="description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
+<meta name="keywords" content="模块化  webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端模块化简述">
+<meta property="og:url" content="https://fujingfj.github.io/2017/09/25/前端模块化简述/index.html">
 <meta property="og:site_name" content="符静的个人博客">
+<meta property="og:description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
+<meta property="og:updated_time" content="2017-09-25T12:02:32.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="符静的个人博客">
+<meta name="twitter:title" content="前端模块化简述">
+<meta name="twitter:description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
   
     <link rel="alternate" href="/atom.xml" title="符静的个人博客" type="application/atom+xml">
   
@@ -59,115 +64,75 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/25/前端模块化简述/" class="archive-article-date">
-  <time datetime="2017-09-25T12:01:43.000Z" itemprop="datePublished">Sep 25</time>
+        <section id="main"><article id="post-前端模块化简述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/25/前端模块化简述/" class="article-date">
+  <time datetime="2017-09-25T12:01:43.000Z" itemprop="datePublished">2017-09-25</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/25/前端模块化简述/">前端模块化简述</a>
+    <h1 class="article-title" itemprop="name">
+      前端模块化简述
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/20/基础知识之href和样式覆盖/" class="archive-article-date">
-  <time datetime="2017-09-20T13:09:16.000Z" itemprop="datePublished">Sep 20</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/20/基础知识之href和样式覆盖/">基础知识之href和样式覆盖</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/07/边写边学vue之三——链接/" class="archive-article-date">
-  <time datetime="2017-09-07T14:09:01.000Z" itemprop="datePublished">Sep 7</time>
-</a>
+        <h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><ul>
+<li>模块化规范之一</li>
+<li>同步加载</li>
+<li>NodeJS采用，偏向服务端</li>
+<li>一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象</li>
+</ul>
+<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><ul>
+<li>Asynchronous Module Definition</li>
+<li>异步加载模块规范</li>
+<li>requireJS采用<br>-提前定义依赖模块，预加载模块，依赖前置</li>
+<li>也好久没维护了，比较广泛的用预编译处理模块化</li>
+</ul>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><ul>
+<li>Common Module Definition</li>
+<li>异步加载，依赖就近，</li>
+<li>seaJS采用，直接require引用</li>
+<li>seaJS已经一年没更新了，官网也木有了</li>
+</ul>
+<h3 id="ES6实现模块化"><a href="#ES6实现模块化" class="headerlink" title="ES6实现模块化"></a>ES6实现模块化</h3><ul>
+<li>import导入模块</li>
+<li>export 导出模块</li>
+</ul>
+<h3 id="目前技术：-ES6-webpack"><a href="#目前技术：-ES6-webpack" class="headerlink" title="目前技术： ES6 + webpack"></a>目前技术： ES6 + webpack</h3>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/07/边写边学vue之三——链接/">边写边学vue之三——链接</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/页面布局——定宽-自适应宽/" class="archive-article-date">
-  <time datetime="2017-09-05T13:49:04.000Z" itemprop="datePublished">Sep 5</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj809f4ju0001tkhq4wpmsfpv" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/页面布局——定宽-自适应宽/">页面布局——定宽+自适应宽</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/01/边写边学vue之二———数据传递/" class="archive-article-date">
-  <time datetime="2017-09-01T13:35:33.000Z" itemprop="datePublished">Sep 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/01/边写边学vue之二———数据传递/">边写边学vue之二———数据传递</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化-webpack/">模块化  webpack</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/20/基础知识之href和样式覆盖/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基础知识之href和样式覆盖</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
