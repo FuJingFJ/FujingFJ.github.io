@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fujingfj.github.io"></form>
@@ -60,6 +60,79 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Vue中使用Sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/27/Vue中使用Sass/" class="article-date">
+  <time datetime="2017-09-27T00:45:51.000Z" itemprop="datePublished">2017-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/27/Vue中使用Sass/">Vue中使用Sass</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-webpack安装sass"><a href="#1-webpack安装sass" class="headerlink" title="1. webpack安装sass"></a>1. webpack安装sass</h2><ol>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev sass-loader</div><div class="line">//sass-loader依赖于node-sass</div><div class="line">npm install --save-dev node-sass</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置:在bulid文件夹下的webpack.base.conf.js rules添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><p>  在vue文件中修改style标签<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;scss&quot;&gt;&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="4-错误提示"><a href="#4-错误提示" class="headerlink" title="4. 错误提示"></a>4. 错误提示</h3><ul>
+<li>sass语法不使用大括号和分号，会报错</li>
+<li>如果希望使用大括号，把lang改成scss</li>
+</ul>
+<h3 id="5-语法"><a href="#5-语法" class="headerlink" title="5. 语法"></a>5. 语法</h3><ol>
+<li>缩进表示层次；</li>
+<li><p>使用变量；</p>
+<ul>
+<li>使用$符号表示变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$background: #ccc</div><div class="line">body:</div><div class="line">  background: $background</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>for循环</p>
+<pre><code>@for $i from 1 through 3 {
+.item-#{$i} { width: 2em * $i; }
+}
+被编译为：
+
+.item-1 {
+width: 2em; }
+.item-2 {
+width: 4em; }
+.item-3 {
+width: 6em; }
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj82blcwx0000l4hq78app9bl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-前端模块化简述" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -109,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj809f4ju0001tkhq4wpmsfpv" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj82blcxf0003l4hqirxfaxh9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
@@ -156,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj809f4jm0000tkhqh72b2se4" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj82blcx70001l4hq36jehnoq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
@@ -209,9 +282,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/" data-id="cj809f4k80004tkhq63baq21h" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/" data-id="cj82bpawr0003hwhqvpve8hyi" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
     </footer>
   </div>
   
@@ -276,9 +351,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/" data-id="cj809f4kp0008tkhqd4w1ctf5" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/" data-id="cj82bpawt0004hwhqve7pi8mz" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
     </footer>
   </div>
   
@@ -361,9 +438,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj809f4kh0005tkhqcg5953gy" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj82bpavu0000hwhqqgakm7ar" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
     </footer>
   </div>
   
@@ -449,9 +528,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/" data-id="cj809f4k10003tkhq0zwfbvmm" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/" data-id="cj82bpawa0001hwhquodxmprx" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
     </footer>
   </div>
   
@@ -469,9 +550,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
     </div>
   </div>
 
@@ -479,9 +560,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a>
+      <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a>
     </div>
   </div>
 
@@ -498,9 +579,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/27/Vue中使用Sass/">Vue中使用Sass</a>
+          </li>
         
           <li>
             <a href="/2017/09/25/前端模块化简述/">前端模块化简述</a>
@@ -518,10 +603,6 @@
             <a href="/2017/09/05/页面布局——定宽-自适应宽/">页面布局——定宽+自适应宽</a>
           </li>
         
-          <li>
-            <a href="/2017/09/01/边写边学vue之二———数据传递/">边写边学vue之二———数据传递</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -535,7 +616,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 FuJing<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

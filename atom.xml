@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-25T14:24:50.334Z</updated>
+  <updated>2017-09-27T00:55:15.047Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue中使用Sass</title>
+    <link href="https://fujingfj.github.io/2017/09/27/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8Sass/"/>
+    <id>https://fujingfj.github.io/2017/09/27/Vue中使用Sass/</id>
+    <published>2017-09-27T00:45:51.000Z</published>
+    <updated>2017-09-27T00:55:15.047Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-webpack安装sass"><a href="#1-webpack安装sass" class="headerlink" title="1. webpack安装sass"></a>1. webpack安装sass</h2><ol>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev sass-loader</div><div class="line">//sass-loader依赖于node-sass</div><div class="line">npm install --save-dev node-sass</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置:在bulid文件夹下的webpack.base.conf.js rules添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><p>  在vue文件中修改style标签<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;scss&quot;&gt;&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="4-错误提示"><a href="#4-错误提示" class="headerlink" title="4. 错误提示"></a>4. 错误提示</h3><ul>
+<li>sass语法不使用大括号和分号，会报错</li>
+<li>如果希望使用大括号，把lang改成scss</li>
+</ul>
+<h3 id="5-语法"><a href="#5-语法" class="headerlink" title="5. 语法"></a>5. 语法</h3><ol>
+<li>缩进表示层次；</li>
+<li><p>使用变量；</p>
+<ul>
+<li>使用$符号表示变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$background: #ccc</div><div class="line">body:</div><div class="line">  background: $background</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>for循环</p>
+<pre><code>@for $i from 1 through 3 {
+.item-#{$i} { width: 2em * $i; }
+}
+被编译为：
+
+.item-1 {
+width: 2em; }
+.item-2 {
+width: 4em; }
+.item-3 {
+width: 6em; }
+</code></pre></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-webpack安装sass&quot;&gt;&lt;a href=&quot;#1-webpack安装sass&quot; class=&quot;headerlink&quot; title=&quot;1. webpack安装sass&quot;&gt;&lt;/a&gt;1. webpack安装sass&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://fujingfj.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>前端模块化简述</title>
@@ -95,7 +152,7 @@
     <link href="https://fujingfj.github.io/2017/09/07/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%B8%89%E2%80%94%E2%80%94%E9%93%BE%E6%8E%A5/"/>
     <id>https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/</id>
     <published>2017-09-07T14:09:01.000Z</published>
-    <updated>2017-09-25T14:11:30.349Z</updated>
+    <updated>2017-09-27T00:58:55.322Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-get-和-post-的区别"><a href="#1-get-和-post-的区别" class="headerlink" title="1. get 和 post 的区别"></a>1. get 和 post 的区别</h3><ul>
 <li>Get是向服务器发索取数据的一种请求，而Post是向服务器提交数据的一种请求</li>
@@ -122,6 +179,8 @@
     </summary>
     
     
+      <category term="vue" scheme="https://fujingfj.github.io/tags/vue/"/>
+    
   </entry>
   
   <entry>
@@ -129,7 +188,7 @@
     <link href="https://fujingfj.github.io/2017/09/05/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E2%80%94%E2%80%94%E5%AE%9A%E5%AE%BD-%E8%87%AA%E9%80%82%E5%BA%94%E5%AE%BD/"/>
     <id>https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/</id>
     <published>2017-09-05T13:49:04.000Z</published>
-    <updated>2017-09-25T14:07:48.050Z</updated>
+    <updated>2017-09-27T00:59:09.315Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-布局"><a href="#1-布局" class="headerlink" title="1. 布局"></a>1. 布局</h3><ul>
 <li>左右宽度固定，中间自适应<ol>
@@ -174,6 +233,8 @@
     </summary>
     
     
+      <category term="css" scheme="https://fujingfj.github.io/tags/css/"/>
+    
   </entry>
   
   <entry>
@@ -181,7 +242,7 @@
     <link href="https://fujingfj.github.io/2017/09/01/%E8%BE%B9%E5%86%99%E8%BE%B9%E5%AD%A6vue%E4%B9%8B%E4%BA%8C%E2%80%94%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/"/>
     <id>https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/</id>
     <published>2017-09-01T13:35:33.000Z</published>
-    <updated>2017-09-25T13:48:17.652Z</updated>
+    <updated>2017-09-27T00:58:30.154Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-fetch"><a href="#1-fetch" class="headerlink" title="1. fetch"></a>1. fetch</h3><ul>
 <li>原生不支持跨域，需要设置后端代理</li>
@@ -243,6 +304,8 @@
     </summary>
     
     
+      <category term="vue" scheme="https://fujingfj.github.io/tags/vue/"/>
+    
   </entry>
   
   <entry>
@@ -250,7 +313,7 @@
     <link href="https://fujingfj.github.io/2017/08/31/%E8%B1%86%E7%93%A3Vue%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/"/>
     <id>https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/</id>
     <published>2017-08-31T13:00:11.000Z</published>
-    <updated>2017-09-25T13:34:43.453Z</updated>
+    <updated>2017-09-27T00:58:09.064Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><ul>
 <li>计算后属性会被添加到vue实例中，可以直接用<code>vue.属性名</code>调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -313,6 +376,8 @@
     
     </summary>
     
+    
+      <category term="vue" scheme="https://fujingfj.github.io/tags/vue/"/>
     
   </entry>
   

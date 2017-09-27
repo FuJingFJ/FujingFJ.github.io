@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端模块化简述 | 符静的个人博客</title>
+  <title>Vue中使用Sass | 符静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
-<meta name="keywords" content="模块化">
+  <meta name="description" content="1. webpack安装sass 安装 123npm install --save-dev sass-loader//sass-loader依赖于node-sassnpm install --save-dev node-sass  配置:在bulid文件夹下的webpack.base.conf.js rules添加配置 1234&amp;#123;  test: /\.sass$/,  loaders:">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端模块化简述">
-<meta property="og:url" content="https://fujingfj.github.io/2017/09/25/前端模块化简述/index.html">
+<meta property="og:title" content="Vue中使用Sass">
+<meta property="og:url" content="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/index.html">
 <meta property="og:site_name" content="符静的个人博客">
-<meta property="og:description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
-<meta property="og:updated_time" content="2017-09-25T14:24:50.334Z">
+<meta property="og:description" content="1. webpack安装sass 安装 123npm install --save-dev sass-loader//sass-loader依赖于node-sassnpm install --save-dev node-sass  配置:在bulid文件夹下的webpack.base.conf.js rules添加配置 1234&amp;#123;  test: /\.sass$/,  loaders:">
+<meta property="og:updated_time" content="2017-09-27T00:55:15.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端模块化简述">
-<meta name="twitter:description" content="CommonJS 模块化规范之一 同步加载 NodeJS采用，偏向服务端 一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象  AMD Asynchronous Module Definition 异步加载模块规范 requireJS采用-提前定义依赖模块，预加载模块，依赖前置 也好久没维护了，比较广泛的用预编译处理模块化  CMD Comm">
+<meta name="twitter:title" content="Vue中使用Sass">
+<meta name="twitter:description" content="1. webpack安装sass 安装 123npm install --save-dev sass-loader//sass-loader依赖于node-sassnpm install --save-dev node-sass  配置:在bulid文件夹下的webpack.base.conf.js rules添加配置 1234&amp;#123;  test: /\.sass$/,  loaders:">
   
     <link rel="alternate" href="/atom.xml" title="符静的个人博客" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-前端模块化简述" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Vue中使用Sass" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/25/前端模块化简述/" class="article-date">
-  <time datetime="2017-09-25T12:01:43.000Z" itemprop="datePublished">2017-09-25</time>
+    <a href="/2017/09/27/Vue中使用Sass/" class="article-date">
+  <time datetime="2017-09-27T00:45:51.000Z" itemprop="datePublished">2017-09-27</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      前端模块化简述
+      Vue中使用Sass
     </h1>
   
 
@@ -86,36 +86,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><ul>
-<li>模块化规范之一</li>
-<li>同步加载</li>
-<li>NodeJS采用，偏向服务端</li>
-<li>一个单独的文件就是一个模块，加载使用require方法，读取一个文件并执行，返回文件内部的export对象</li>
+        <h2 id="1-webpack安装sass"><a href="#1-webpack安装sass" class="headerlink" title="1. webpack安装sass"></a>1. webpack安装sass</h2><ol>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev sass-loader</div><div class="line">//sass-loader依赖于node-sass</div><div class="line">npm install --save-dev node-sass</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置:在bulid文件夹下的webpack.base.conf.js rules添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: /\.sass$/,</div><div class="line">  loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h3><p>  在vue文件中修改style标签<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style lang=&quot;scss&quot;&gt;&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="4-错误提示"><a href="#4-错误提示" class="headerlink" title="4. 错误提示"></a>4. 错误提示</h3><ul>
+<li>sass语法不使用大括号和分号，会报错</li>
+<li>如果希望使用大括号，把lang改成scss</li>
 </ul>
-<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><ul>
-<li>Asynchronous Module Definition</li>
-<li>异步加载模块规范</li>
-<li>requireJS采用<br>-提前定义依赖模块，预加载模块，依赖前置</li>
-<li>也好久没维护了，比较广泛的用预编译处理模块化</li>
+<h3 id="5-语法"><a href="#5-语法" class="headerlink" title="5. 语法"></a>5. 语法</h3><ol>
+<li>缩进表示层次；</li>
+<li><p>使用变量；</p>
+<ul>
+<li>使用$符号表示变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$background: #ccc</div><div class="line">body:</div><div class="line">  background: $background</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><ul>
-<li>Common Module Definition</li>
-<li>异步加载，依赖就近，</li>
-<li>seaJS采用，直接require引用</li>
-<li>seaJS已经一年没更新了，官网也木有了</li>
-</ul>
-<h3 id="ES6实现模块化"><a href="#ES6实现模块化" class="headerlink" title="ES6实现模块化"></a>ES6实现模块化</h3><ul>
-<li>import导入模块</li>
-<li>export 导出模块</li>
-</ul>
-<h3 id="目前技术：-ES6-webpack"><a href="#目前技术：-ES6-webpack" class="headerlink" title="目前技术： ES6 + webpack"></a>目前技术： ES6 + webpack</h3>
+</li>
+<li><p>for循环</p>
+<pre><code>@for $i from 1 through 3 {
+.item-#{$i} { width: 2em * $i; }
+}
+被编译为：
+
+.item-1 {
+width: 2em; }
+.item-2 {
+width: 4em; }
+.item-3 {
+width: 6em; }
+</code></pre></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj82blcxf0003l4hqirxfaxh9" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj82blcwx0000l4hq78app9bl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 
     </footer>
   </div>
@@ -123,19 +136,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/09/27/Vue中使用Sass/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Vue中使用Sass
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/20/基础知识之href和样式覆盖/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/25/前端模块化简述/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">基础知识之href和样式覆盖</div>
+      <div class="article-nav-title">前端模块化简述</div>
     </a>
   
 </nav>
