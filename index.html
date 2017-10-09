@@ -61,6 +61,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue下使用bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/09/vue下使用bootstrap/" class="article-date">
+  <time datetime="2017-10-09T02:13:02.000Z" itemprop="datePublished">2017-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/09/vue下使用bootstrap/">vue下使用bootstrap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-bootstrap是基于JQ的，所以使用前需要先安装JQuery"><a href="#1-bootstrap是基于JQ的，所以使用前需要先安装JQuery" class="headerlink" title="1. bootstrap是基于JQ的，所以使用前需要先安装JQuery"></a>1. bootstrap是基于JQ的，所以使用前需要先安装JQuery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jquery -s-d</div></pre></td></tr></table></figure>
+<h3 id="2-安装bootstrap"><a href="#2-安装bootstrap" class="headerlink" title="2. 安装bootstrap"></a>2. 安装bootstrap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install bootstrap -s-d</div></pre></td></tr></table></figure>
+<h3 id="3-配置JQuery"><a href="#3-配置JQuery" class="headerlink" title="3. 配置JQuery"></a>3. 配置JQuery</h3><ul>
+<li>将jquery以插件打包，需要在build/webpack.base.conf.js文件中为webpack的plugins进行插件设置。</li>
+<li><ol>
+<li>加入webpack对象：(必须添加，不然找不到wenpack)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var webpack=require(&apos;webpack&apos;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>在整个配置对象的末尾增加plugins配置。</li>
+</ol>
+<ul>
+<li>在webpack.base.conf.js中的配置项，可以在dev和build出来的pro版本中都有效。</li>
+<li>下面的配置其实就是变量名的真正指向设置，这样，在页面中对jquery的各种名字的调用就会有效，否则bootstrap跑不起来。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    new webpack.ProvidePlugin(&#123;</div><div class="line">      $: &quot;jquery&quot;,</div><div class="line">      jQuery: &quot;jquery&quot;,</div><div class="line">      &quot;windows.jQuery&quot;: &quot;jquery&quot;</div><div class="line">    &#125;)</div><div class="line">  ]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-引用bootstrap"><a href="#4-引用bootstrap" class="headerlink" title="4. 引用bootstrap"></a>4. 引用bootstrap</h3><p>在src/main.js文件的顶部加入如下对bootstrap主要文件的引用，注意这里的路径，不在是从src/assets加载，而是换成了从node_modules加载。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;</div><div class="line">import &apos;bootstrap/dist/js/bootstrap.min.js&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="5-设置之后需要重启server"><a href="#5-设置之后需要重启server" class="headerlink" title="5.设置之后需要重启server"></a>5.设置之后需要重启server</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/09/vue下使用bootstrap/" data-id="cj8jjnuc400008chqb6q19dm5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Vue中使用Sass" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/27/Vue中使用Sass/" class="article-date">
@@ -122,7 +178,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj82blcwx0000l4hq78app9bl" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj8jjnuck00028chqubinbjlr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -182,7 +238,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj82blcxf0003l4hqirxfaxh9" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj8jjnuck00048chq0myj2swk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
@@ -229,7 +285,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj82blcx70001l4hq36jehnoq" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj8jjnuck00018chq45usrgky" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
@@ -282,7 +338,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/" data-id="cj82bpawr0003hwhqvpve8hyi" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/" data-id="cj8jjnucz00058chqmchexkgg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -351,7 +407,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/" data-id="cj82bpawt0004hwhqve7pi8mz" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/" data-id="cj8jjnugg000j8chqndt1w7ak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -438,7 +494,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj82bpavu0000hwhqqgakm7ar" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj8jjnucz00098chqapwmz26x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -528,7 +584,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/" data-id="cj82bpawa0001hwhquodxmprx" class="article-share-link">Share</a>
+      <a data-url="https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/" data-id="cj8jjnucz00068chqfhixgkwl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -571,7 +627,7 @@ width: 6em; }
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
     </div>
   </div>
 
@@ -582,6 +638,10 @@ width: 6em; }
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/09/vue下使用bootstrap/">vue下使用bootstrap</a>
+          </li>
         
           <li>
             <a href="/2017/09/27/Vue中使用Sass/">Vue中使用Sass</a>
@@ -597,10 +657,6 @@ width: 6em; }
         
           <li>
             <a href="/2017/09/07/边写边学vue之三——链接/">边写边学vue之三——链接</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/05/页面布局——定宽-自适应宽/">页面布局——定宽+自适应宽</a>
           </li>
         
       </ul>

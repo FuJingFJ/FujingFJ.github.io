@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fujingfj.github.io/"/>
-  <updated>2017-09-27T00:55:15.047Z</updated>
+  <updated>2017-10-09T02:13:57.402Z</updated>
   <id>https://fujingfj.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue下使用bootstrap</title>
+    <link href="https://fujingfj.github.io/2017/10/09/vue%E4%B8%8B%E4%BD%BF%E7%94%A8bootstrap/"/>
+    <id>https://fujingfj.github.io/2017/10/09/vue下使用bootstrap/</id>
+    <published>2017-10-09T02:13:02.000Z</published>
+    <updated>2017-10-09T02:13:57.402Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-bootstrap是基于JQ的，所以使用前需要先安装JQuery"><a href="#1-bootstrap是基于JQ的，所以使用前需要先安装JQuery" class="headerlink" title="1. bootstrap是基于JQ的，所以使用前需要先安装JQuery"></a>1. bootstrap是基于JQ的，所以使用前需要先安装JQuery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jquery -s-d</div></pre></td></tr></table></figure>
+<h3 id="2-安装bootstrap"><a href="#2-安装bootstrap" class="headerlink" title="2. 安装bootstrap"></a>2. 安装bootstrap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install bootstrap -s-d</div></pre></td></tr></table></figure>
+<h3 id="3-配置JQuery"><a href="#3-配置JQuery" class="headerlink" title="3. 配置JQuery"></a>3. 配置JQuery</h3><ul>
+<li>将jquery以插件打包，需要在build/webpack.base.conf.js文件中为webpack的plugins进行插件设置。</li>
+<li><ol>
+<li>加入webpack对象：(必须添加，不然找不到wenpack)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var webpack=require(&apos;webpack&apos;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>在整个配置对象的末尾增加plugins配置。</li>
+</ol>
+<ul>
+<li>在webpack.base.conf.js中的配置项，可以在dev和build出来的pro版本中都有效。</li>
+<li>下面的配置其实就是变量名的真正指向设置，这样，在页面中对jquery的各种名字的调用就会有效，否则bootstrap跑不起来。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    new webpack.ProvidePlugin(&#123;</div><div class="line">      $: &quot;jquery&quot;,</div><div class="line">      jQuery: &quot;jquery&quot;,</div><div class="line">      &quot;windows.jQuery&quot;: &quot;jquery&quot;</div><div class="line">    &#125;)</div><div class="line">  ]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-引用bootstrap"><a href="#4-引用bootstrap" class="headerlink" title="4. 引用bootstrap"></a>4. 引用bootstrap</h3><p>在src/main.js文件的顶部加入如下对bootstrap主要文件的引用，注意这里的路径，不在是从src/assets加载，而是换成了从node_modules加载。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;</div><div class="line">import &apos;bootstrap/dist/js/bootstrap.min.js&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="5-设置之后需要重启server"><a href="#5-设置之后需要重启server" class="headerlink" title="5.设置之后需要重启server"></a>5.设置之后需要重启server</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-bootstrap是基于JQ的，所以使用前需要先安装JQuery&quot;&gt;&lt;a href=&quot;#1-bootstrap是基于JQ的，所以使用前需要先安装JQuery&quot; class=&quot;headerlink&quot; title=&quot;1. bootstrap是基于JQ的，所以使用前
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Vue中使用Sass</title>
