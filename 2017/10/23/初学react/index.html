@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初学react | 符静的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 使用 create-react-app 快速构建 React 开发环境 create-react-app 是来自于 Facebook，通过该命令我们无需配置就能快速构建 React 开发环境。 create-react-app 自动创建的项目是基于 Webpack + ES6 。 执行以下命令创建项目： 1234$ cnpm install -g create-react-app$ crea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初学react">
+<meta property="og:url" content="https://fujingfj.github.io/2017/10/23/初学react/index.html">
+<meta property="og:site_name" content="符静的个人博客">
+<meta property="og:description" content="1. 使用 create-react-app 快速构建 React 开发环境 create-react-app 是来自于 Facebook，通过该命令我们无需配置就能快速构建 React 开发环境。 create-react-app 自动创建的项目是基于 Webpack + ES6 。 执行以下命令创建项目： 1234$ cnpm install -g create-react-app$ crea">
+<meta property="og:updated_time" content="2017-10-23T04:09:01.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初学react">
+<meta name="twitter:description" content="1. 使用 create-react-app 快速构建 React 开发环境 create-react-app 是来自于 Facebook，通过该命令我们无需配置就能快速构建 React 开发环境。 create-react-app 自动创建的项目是基于 Webpack + ES6 。 执行以下命令创建项目： 1234$ cnpm install -g create-react-app$ crea">
+  
+    <link rel="alternate" href="/atom.xml" title="符静的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">符静的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fujingfj.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-初学react" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/23/初学react/" class="article-date">
+  <time datetime="2017-10-23T03:05:28.000Z" itemprop="datePublished">2017-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初学react
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-使用-create-react-app-快速构建-React-开发环境"><a href="#1-使用-create-react-app-快速构建-React-开发环境" class="headerlink" title="1. 使用 create-react-app 快速构建 React 开发环境"></a>1. 使用 create-react-app 快速构建 React 开发环境</h3><ul>
+<li>create-react-app 是来自于 Facebook，通过该命令我们无需配置就能快速构建 React 开发环境。</li>
+<li>create-react-app 自动创建的项目是基于 Webpack + ES6 。</li>
+<li><p>执行以下命令创建项目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g create-react-app</div><div class="line">$ create-react-app my-app</div><div class="line">$ cd my-app/</div><div class="line">$ npm start</div></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器中打开 <a href="http://localhost:3000/查看效果" target="_blank" rel="external">http://localhost:3000/查看效果</a></p>
+</li>
+</ul>
+<h3 id="2-ReactDOM-render"><a href="#2-ReactDOM-render" class="headerlink" title="2. ReactDOM.render()"></a>2. ReactDOM.render()</h3><ul>
+<li><p>ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">  &lt;h1&gt;Hello, world!&lt;/h1&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>将一个 h1 标题，插入 example 节点</p>
+</li>
+</ul>
+<h3 id="3-JSX-语法"><a href="#3-JSX-语法" class="headerlink" title="3. JSX 语法"></a>3. JSX 语法</h3><ul>
+<li><p>允许 HTML 与 JavaScript 的混写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var names = [&apos;Alice&apos;, &apos;Emily&apos;, &apos;Kate&apos;];</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;div&gt;</div><div class="line">  &#123;</div><div class="line">    names.map(function (name) &#123;</div><div class="line">      return &lt;div&gt;Hello, &#123;name&#125;!&lt;/div&gt;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  &lt;/div&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码体现了 JSX 的基本语法规则：遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。上面代码的HTML运行结果如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;Hello,Alice&lt;/div&gt;</div><div class="line">&lt;div&gt;Hello,Emily&lt;/div&gt;</div><div class="line">&lt;div&gt;Hello,Kate&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-组件-React-createClass（）"><a href="#4-组件-React-createClass（）" class="headerlink" title="4. 组件 React.createClass（）"></a>4. 组件 React.createClass（）</h3><ul>
+<li>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var HelloMessage = React.createClass(&#123;</div><div class="line">  render: function() &#123;</div><div class="line">    return &lt;h1&gt;Hello &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;HelloMessage name=&quot;John&quot; /&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>上面代码中，变量 HelloMessage 就是一个组件类。模板插入<code>&lt;HelloMessage /&gt;</code>时，会自动生成HelloMessage的一个实例。所有组件类都必须有自己的 render 方法，用于输出组件。</li>
+<li>注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。</li>
+</ul>
+<h3 id="5-react-router"><a href="#5-react-router" class="headerlink" title="5. react-router"></a>5. react-router</h3><ul>
+<li>多页面应用跳转和组件跳转的路由管理</li>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -S react-router</div></pre></td></tr></table></figure>
+<ul>
+<li><p>使用：当成组件引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &#123; Router &#125; from &apos;react-router&apos;;</div><div class="line">render(&lt;Router/&gt;, document.getElementById(&apos;app&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>Router组件本身只是一个容器，真正的路由要通过Route组件定义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import &#123; Router, Route, hashHistory &#125; from &apos;react-router&apos;;</div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router history=&#123;hashHistory&#125;&gt;</div><div class="line">    &lt;Route path=&quot;/&quot; component=&#123;App&#125;/&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.getElementById(&apos;app&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码中，用户访问根路由/,组件APP就会加载到document.getElementById(‘app’)。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-特点"><a href="#6-特点" class="headerlink" title="6. 特点"></a>6. 特点</h3><ul>
+<li>React不使用HTML，而使用JSX。它打算抛弃DOM，要求开发者不要使用任何 DOM 方法。它甚至还抛弃了 SQL ，自己发明了一套查询语言 GraphQL 。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/23/初学react/" data-id="cj95bpm7c000a0shqufuszrd6" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/24/Vuex小知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Vuex小知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/20/微信小程序初涉/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">微信小程序初涉</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-HTML/">css HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css-HTML/" style="font-size: 10px;">css HTML</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/微信小程序/" style="font-size: 10px;">微信小程序</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/24/Vuex小知识/">Vuex小知识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/初学react/">初学react</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/20/微信小程序初涉/">微信小程序初涉</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/20/css基础知识/">css基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/19/关于Javascript的小知识/">关于Javascript的小知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 FuJing<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

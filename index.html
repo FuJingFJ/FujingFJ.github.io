@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fujingfj.github.io"></form>
@@ -60,6 +60,238 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Vuex小知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/24/Vuex小知识/" class="article-date">
+  <time datetime="2017-10-24T03:25:17.000Z" itemprop="datePublished">2017-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/24/Vuex小知识/">Vuex小知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、核心概念的关系"><a href="#1、核心概念的关系" class="headerlink" title="1、核心概念的关系"></a>1、核心概念的关系</h3><ul>
+<li>this.$store.dispatch(‘ActionFn’)</li>
+<li>=&gt;引发actions里的的’ActionFn’函数运行，该函数内又运行commit函数，参数是一个对象，其中的type属性值是mutations中函数名（type:’MutationFn’），其他属性可以自设</li>
+<li>=&gt;commit引发mutations的’MutationFn’函数运行，该函数接手两个参数，MutationFn(state,payload)。state是原始数据，payload是commit函数传入的参数。</li>
+<li>=&gt;最后MutationFn(state,payload)函数运行，更改数据</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/24/Vuex小知识/" data-id="cj95bpm0u00000shqktjet9u9" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-初学react" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/23/初学react/" class="article-date">
+  <time datetime="2017-10-23T03:05:28.000Z" itemprop="datePublished">2017-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/初学react/">初学react</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-使用-create-react-app-快速构建-React-开发环境"><a href="#1-使用-create-react-app-快速构建-React-开发环境" class="headerlink" title="1. 使用 create-react-app 快速构建 React 开发环境"></a>1. 使用 create-react-app 快速构建 React 开发环境</h3><ul>
+<li>create-react-app 是来自于 Facebook，通过该命令我们无需配置就能快速构建 React 开发环境。</li>
+<li>create-react-app 自动创建的项目是基于 Webpack + ES6 。</li>
+<li><p>执行以下命令创建项目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g create-react-app</div><div class="line">$ create-react-app my-app</div><div class="line">$ cd my-app/</div><div class="line">$ npm start</div></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器中打开 <a href="http://localhost:3000/查看效果" target="_blank" rel="external">http://localhost:3000/查看效果</a></p>
+</li>
+</ul>
+<h3 id="2-ReactDOM-render"><a href="#2-ReactDOM-render" class="headerlink" title="2. ReactDOM.render()"></a>2. ReactDOM.render()</h3><ul>
+<li><p>ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">  &lt;h1&gt;Hello, world!&lt;/h1&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>将一个 h1 标题，插入 example 节点</p>
+</li>
+</ul>
+<h3 id="3-JSX-语法"><a href="#3-JSX-语法" class="headerlink" title="3. JSX 语法"></a>3. JSX 语法</h3><ul>
+<li><p>允许 HTML 与 JavaScript 的混写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var names = [&apos;Alice&apos;, &apos;Emily&apos;, &apos;Kate&apos;];</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;div&gt;</div><div class="line">  &#123;</div><div class="line">    names.map(function (name) &#123;</div><div class="line">      return &lt;div&gt;Hello, &#123;name&#125;!&lt;/div&gt;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  &lt;/div&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码体现了 JSX 的基本语法规则：遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。上面代码的HTML运行结果如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;Hello,Alice&lt;/div&gt;</div><div class="line">&lt;div&gt;Hello,Emily&lt;/div&gt;</div><div class="line">&lt;div&gt;Hello,Kate&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-组件-React-createClass（）"><a href="#4-组件-React-createClass（）" class="headerlink" title="4. 组件 React.createClass（）"></a>4. 组件 React.createClass（）</h3><ul>
+<li>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var HelloMessage = React.createClass(&#123;</div><div class="line">  render: function() &#123;</div><div class="line">    return &lt;h1&gt;Hello &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;HelloMessage name=&quot;John&quot; /&gt;,</div><div class="line">  document.getElementById(&apos;example&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>上面代码中，变量 HelloMessage 就是一个组件类。模板插入<code>&lt;HelloMessage /&gt;</code>时，会自动生成HelloMessage的一个实例。所有组件类都必须有自己的 render 方法，用于输出组件。</li>
+<li>注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。</li>
+</ul>
+<h3 id="5-react-router"><a href="#5-react-router" class="headerlink" title="5. react-router"></a>5. react-router</h3><ul>
+<li>多页面应用跳转和组件跳转的路由管理</li>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -S react-router</div></pre></td></tr></table></figure>
+<ul>
+<li><p>使用：当成组件引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &#123; Router &#125; from &apos;react-router&apos;;</div><div class="line">render(&lt;Router/&gt;, document.getElementById(&apos;app&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>Router组件本身只是一个容器，真正的路由要通过Route组件定义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import &#123; Router, Route, hashHistory &#125; from &apos;react-router&apos;;</div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router history=&#123;hashHistory&#125;&gt;</div><div class="line">    &lt;Route path=&quot;/&quot; component=&#123;App&#125;/&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.getElementById(&apos;app&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码中，用户访问根路由/,组件APP就会加载到document.getElementById(‘app’)。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-特点"><a href="#6-特点" class="headerlink" title="6. 特点"></a>6. 特点</h3><ul>
+<li>React不使用HTML，而使用JSX。它打算抛弃DOM，要求开发者不要使用任何 DOM 方法。它甚至还抛弃了 SQL ，自己发明了一套查询语言 GraphQL 。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/23/初学react/" data-id="cj95bpm7c000a0shqufuszrd6" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-微信小程序初涉" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/20/微信小程序初涉/" class="article-date">
+  <time datetime="2017-10-20T12:49:28.000Z" itemprop="datePublished">2017-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/20/微信小程序初涉/">微信小程序初涉</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>页面中的this可以改变，函数中使用app的this，需要设置_this = this</li>
+<li>更改数据需要使用setData，这是原型中的函数，需要在组件中调用</li>
+<li>修改数组数据，因为有[]表示索引，需要用引号把key值引起来</li>
+<li>map是小程序自有标签，样式表中无法修改样式</li>
+<li>WebsSocket:基于TCP的一种新网络协议，实现可浏览器与服务器全双工（full-duplex）通信——允许服务器主动发送信息给客户端</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/20/微信小程序初涉/" data-id="cj95bpm7s000b0shqe09lkn7f" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/20/css基础知识/" class="article-date">
+  <time datetime="2017-10-20T03:57:36.000Z" itemprop="datePublished">2017-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/20/css基础知识/">css基础知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-blockquote标签"><a href="#1-blockquote标签" class="headerlink" title="1. blockquote标签"></a>1. blockquote标签</h3><ul>
+<li><code>&lt;blockquote&gt;</code>标签定义摘自另一个源的块引用。</li>
+<li><code>&lt;blockquote&gt;</code>与<code>&lt;/blockquote&gt;</code> 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进，而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。</li>
+<li><img src="2017102001.jpg" alt=""></li>
+<li>如果标记是不需要段落分隔的短引用，请使用<code>&lt;q&gt;</code>元素。blockquote 只应该应用于来自另一个源的引用。</li>
+<li><p>属性：cite ；属性值： URL（引用的 URL，如果引用来自网络的话。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;blockquote cite=&quot;http://www.wwf.org&quot;&gt;</div><div class="line">  WWF&apos;s ultimate goal is to build a future where people live in harmony with nature.</div><div class="line">&lt;/blockquote&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-viewport"><a href="#2-viewport" class="headerlink" title="2. viewport"></a>2. viewport</h3><ul>
+<li><code>&lt;mete name=&quot;viewport</code> content=”width=device-width;initial-scale=1.0;maximum-scale=1.;user-scalable=0;” /&gt;</li>
+<li>width: viewport的宽度</li>
+<li>height：viewport的高度</li>
+<li>initial-scale: 初始的缩放比例</li>
+<li>minimum-scale: 允许用户缩放到的最小比例</li>
+<li>maximum-scale: 允许用户缩放到的最大比例</li>
+<li>user-scalable: 用户是否可以手动缩放</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fujingfj.github.io/2017/10/20/css基础知识/" data-id="cj95bpm7c00070shqx9c3gcai" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css-HTML/">css HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-关于Javascript的小知识" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -118,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/" data-id="cj8xtiqm50000ochq4605wbyk" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/" data-id="cj95bpm7c00080shqc7lgzxmj" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -179,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/10/18/移动端适配之DevicePixelRatio/" data-id="cj8xtiqnw000cochqkzu10248" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/10/18/移动端适配之DevicePixelRatio/" data-id="cj95bpm7s000c0shqt2zgahvl" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
@@ -237,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/10/09/vue下使用bootstrap/" data-id="cj8xtiqml0004ochqri0hingq" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/10/09/vue下使用bootstrap/" data-id="cj95bpm6w00060shqrm9j4dvx" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -286,7 +518,7 @@
 <li>缩进表示层次；</li>
 <li><p>使用变量；</p>
 <ul>
-<li>使用$符号表示变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$background: #ccc</div><div class="line">body:</div><div class="line">  background: $background</div></pre></td></tr></table></figure>
+<li>使用$符号表示变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$background: #ccc;</div><div class="line">body //没有冒号！！！！</div><div class="line">  background: $background;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -308,7 +540,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj8xtiqor000gochqhjm9fq7u" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/27/Vue中使用Sass/" data-id="cj95bpm6w00030shq7ufeoe3z" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -368,7 +600,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj8xtiqml0003ochqstche55p" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/25/前端模块化简述/" data-id="cj95bpm87000g0shqzgealzu7" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
@@ -415,7 +647,7 @@ width: 6em; }
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj8xtiqnw000bochqh84x5a4o" class="article-share-link">Partager</a>
+      <a data-url="https://fujingfj.github.io/2017/09/20/基础知识之href和样式覆盖/" data-id="cj95bpm9i000t0shqdnrcaqbx" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
@@ -427,306 +659,11 @@ width: 6em; }
 
 
   
-    <article id="post-边写边学vue之三——链接" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/07/边写边学vue之三——链接/" class="article-date">
-  <time datetime="2017-09-07T14:09:01.000Z" itemprop="datePublished">2017-09-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/07/边写边学vue之三——链接/">边写边学vue之三——链接</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-get-和-post-的区别"><a href="#1-get-和-post-的区别" class="headerlink" title="1. get 和 post 的区别"></a>1. get 和 post 的区别</h3><ul>
-<li>Get是向服务器发索取数据的一种请求，而Post是向服务器提交数据的一种请求</li>
-<li>Get请求的参数会跟在url后进行传递，请求的数据会附在URL之后，以?分割URL和传输数据，参数之间以&amp;相连,％XX中的XX为该符号以16进制表示的ASCII，如果数据是英文字母/数字，原样发送，如果是空格，转换为+，如果是中文/其他字符，则直接把字符串用BASE64加密。</li>
-<li>Get传输的数据有大小限制，因为GET是通过URL提交数据，那么GET可提交的数据量就跟URL的长度有直接关系了，不同的浏览器对URL的长度的限制是不同的。</li>
-<li>GET请求的数据会被浏览器缓存起来，用户名和密码将明文出现在URL上，其他人可以查到历史浏览记录，数据不太安全。在服务器端，用Request.QueryString来获取Get方式提交来的数据</li>
-<li>Post请求则作为http消息的实际内容发送给web服务器，数据放置在HTML Header内提交，Post没有限制提交的数据。Post比Get安全，当数据是中文或者不敏感的数据，则用get，因为使用get，参数会显示在地址，对于敏感数据和不是中文字符的数据，则用post</li>
-<li>POST表示可能修改变服务器上的资源的请求，在服务器端，用Post方式提交的数据只能用Request.Form来获取</li>
-</ul>
-<h3 id="2-key"><a href="#2-key" class="headerlink" title="2. key"></a>2. key</h3><ul>
-<li>如果重复的元素需要重新渲染,不被复用，或与其他用类元素相区别(常用语v-for/v-if)，需要绑定key属性 <code>:key=&quot;item.id&quot;</code></li>
-</ul>
-<h3 id="3-v-html"><a href="#3-v-html" class="headerlink" title="3. v-html"></a>3. v-html</h3><ul>
-<li>vue的数据渲染是文本渲染，HTML标签也会被变成成文本出现在页面</li>
-<li>当数据中有html标签需要渲染在页面的时候，就要使用v-html<br>使用方法：<code>&lt;div v-html=&quot;data&quot;&gt;&lt;/div&gt;</code>。这时候data中的内容就会被渲染到div的标签中。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/07/边写边学vue之三——链接/" data-id="cj8xtiqng0008ochqrjpwvq13" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-页面布局——定宽-自适应宽" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/05/页面布局——定宽-自适应宽/" class="article-date">
-  <time datetime="2017-09-05T13:49:04.000Z" itemprop="datePublished">2017-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/05/页面布局——定宽-自适应宽/">页面布局——定宽+自适应宽</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-布局"><a href="#1-布局" class="headerlink" title="1. 布局"></a>1. 布局</h3><ul>
-<li>左右宽度固定，中间自适应<ol>
-<li>设置基本样式</li>
-<li>中间自适应盒子设置宽度100%</li>
-<li>三个盒子均浮动 ，外层容器设置<code>overflow: hidden</code><br><img src="images/0904_01.jpg" alt=""></li>
-<li>中间盒子设置左margin<code>margin-left: 盒子的宽度</code><br><img src="images/0904_02.jpg" alt=""></li>
-<li>左边盒子设置<code>margin-left：-100%</code>,让中间的盒子浮上去<br><img src="images/0904_03.jpg" alt=""></li>
-<li>中间盒子设置右margin <code>margin-right: -2*盒子的宽度</code>，让右边的盒子浮上去<ul>
-<li>这里，因为中间先设置了左margin，盒子已经往左偏移了，所以为了让右盒子能在页面浮上来，中间盒子需要设置右margin=-（左盒子宽度+右盒子宽度）<br><img src="images/0904_04.jpg" alt=""></li>
-</ul>
-</li>
-<li>这时候，中间的盒子内容的右侧会被右侧的盒子遮挡，<br><img src="images/0904_05.jpg" alt=""></li>
-<li>因为中间盒子的右侧，有负margin，需要把内容从右负margin里挤回来，以及盒子还因为左margin向左偏移，还需要再加上左边偏移，所以设置右padding = 左margin + 右margin ，同时设置<code>box-sizing：border-box</code><br><img src="images/0904_06.jpg" alt=""></li>
-</ol>
-</li>
-</ul>
-<h3 id="2-圣杯布局和双飞翼布局的异同"><a href="#2-圣杯布局和双飞翼布局的异同" class="headerlink" title="2. 圣杯布局和双飞翼布局的异同"></a>2. 圣杯布局和双飞翼布局的异同</h3><ul>
-<li>圣杯：<ul>
-<li>中间盒子为第一个div</li>
-<li>左侧margin-left: -100%,右侧： margin-left: 200px 。使三个盒子水平</li>
-<li>容器加左右padding，留出左右盒子的距离</li>
-<li>左右盒子加相对定位，负盒子宽度</li>
-</ul>
-</li>
-<li>双飞翼<ul>
-<li>三个盒子水平方式和圣杯一致</li>
-<li>中间层内嵌一个div，class=’main’,用来写内容</li>
-<li>.main的div给左右margin,使内容不被左右盒子遮盖</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/05/页面布局——定宽-自适应宽/" data-id="cj8xtiqn10007ochqvcfkdf3g" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-边写边学vue之二———数据传递" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/01/边写边学vue之二———数据传递/" class="article-date">
-  <time datetime="2017-09-01T13:35:33.000Z" itemprop="datePublished">2017-09-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/01/边写边学vue之二———数据传递/">边写边学vue之二———数据传递</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-fetch"><a href="#1-fetch" class="headerlink" title="1. fetch"></a>1. fetch</h3><ul>
-<li>原生不支持跨域，需要设置后端代理</li>
-<li>虽然设置了<code>{mode:&#39;no-cors&#39;}</code>不会报错，但结果会返回<code>type:&quot;opaque&quot;,ok: &#39;false&#39;</code>表明没有权限访问</li>
-<li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 链接页面 --&gt;</div><div class="line">fetch(&apos;url&apos;)</div><div class="line">&lt;!-- 处理数据并返回，千万不要忘记return  --&gt;</div><div class="line">.then(res=&gt;return res.text())</div><div class="line">&lt;!-- 处理data --&gt;</div><div class="line">.then(data=&gt;console.log(data))</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-Jsonp"><a href="#2-Jsonp" class="headerlink" title="2. Jsonp"></a>2. Jsonp</h3><ol>
-<li>原理： script标签可以跨域访问，并且把返回的内容作为callback函数参数,可以对其进行处理</li>
-<li>写法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 这里的data就是豆瓣API接口返回的数据 --&gt;</div><div class="line">var fn = function(data)&#123;</div><div class="line">    console.log(data)</div><div class="line">&#125;</div><div class="line">let search = document.createElement(&apos;script&apos;);//创建script标签</div><div class="line">search.src=&quot;https://api.douban.com/v2/book/search?q=虚构类&amp;callback=fn&quot;;//src引入链接，并通过fn对数据做处理</div><div class="line">document.body.appendChild(search)//添加到页面</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="3-mutation-和-action"><a href="#3-mutation-和-action" class="headerlink" title="3. mutation 和 action"></a>3. mutation 和 action</h3><ul>
-<li>都是对state数据的处理</li>
-<li>mutation 是同步的，用this.$store.commit提交</li>
-<li>action 是异步的，用this.$store.dispatch提交<ul>
-<li>dispatch提交了一个action,action处理完成之后再commit给mutation修改state</li>
-</ul>
-</li>
-<li>所以，最终的state修改都是mutation处理的</li>
-</ul>
-<h3 id="4-VueX中actions里的commit函数的参数解构形式"><a href="#4-VueX中actions里的commit函数的参数解构形式" class="headerlink" title="4. VueX中actions里的commit函数的参数解构形式"></a>4. VueX中actions里的commit函数的参数解构形式</h3><ol>
-<li><p><code>commit()</code>可以传入mutations里的函数名的字符串，来确认提交一个mutation<br><code>commit(&#39;fn&#39;)</code></p>
-</li>
-<li><p>也可以传入一个对象，该对象t的type属性就是提交的mutation函数，其他属性可以自行设置,该对象作为mutation函数的第二个参数，可以在mutation里处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">commit(&#123;  </div><div class="line">    type: fn,  </div><div class="line">    key: value,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>actions提交mutation</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//context是一个与store实例具有相同方法和属性的对象，通过调用context下的commit方法提交mutation</div><div class="line">actions: &#123;</div><div class="line">    fn(context)&#123;</div><div class="line">        context.commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 根据参数解构（传参对象的值可以直接使用）,这里函数内部只使用了context的commit属性，所以可以简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit:commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//进一步简写为</div><div class="line">actions:&#123;</div><div class="line">    fn(&#123;commit&#125;)&#123;</div><div class="line">        commit(&apos;mutationFn&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="5-asnyc-和-await"><a href="#5-asnyc-和-await" class="headerlink" title="5. asnyc 和 await"></a>5. asnyc 和 await</h3><ul>
-<li>解决异步问题</li>
-<li>写法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var fn = asnyc function()&#123;</div><div class="line">   await fn1</div><div class="line">   await fn2</div><div class="line">&#125;</div><div class="line">fn()</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="6-Vue跨域"><a href="#6-Vue跨域" class="headerlink" title="6. Vue跨域"></a>6. Vue跨域</h3><ul>
-<li>webpack配置proxyTable的参数(在config目录下的index.js中)</li>
-<li><p>配置方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">    &apos;/api&apos;: &#123;</div><div class="line">        target: &apos;http://api.douban.com/v2&apos;,</div><div class="line">        changeOrigin: true,</div><div class="line">        pathRewrite: &#123;</div><div class="line">            &apos;^/api&apos;: &apos;&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>调用方法<br>  <code>/api/xxxxxx</code></p>
-</li>
-</ul>
-<h3 id="7-mapState"><a href="#7-mapState" class="headerlink" title="7. mapState"></a>7. mapState</h3><ul>
-<li>state 的辅助函数，生成计算属性，参数是一个对象，返回一个对象</li>
-<li>在通过computed传给计算属性</li>
-<li>通过…扩展运算符简写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//单组件引入mapstate</div><div class="line">import &#123;mapState&#125; from &quot;vuex&quot;</div><div class="line">computed: &#123;</div><div class="line">    ...mapState(&#123;</div><div class="line">         attr: state=&gt;state.attr </div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="8-箭头函数"><a href="#8-箭头函数" class="headerlink" title="8. 箭头函数"></a>8. 箭头函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a=&gt;a</div><div class="line">//等同于</div><div class="line">function (a)&#123; return a &#125;</div><div class="line"></div><div class="line">ar f = () =&gt; 5;</div><div class="line">// 等同于</div><div class="line">var f = function () &#123; return 5 &#125;;</div><div class="line"></div><div class="line">var sum = (num1, num2) =&gt; num1 + num2;</div><div class="line">// 等同于</div><div class="line">var sum = function(num1, num2) &#123;</div><div class="line">  return num1 + num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/09/01/边写边学vue之二———数据传递/" data-id="cj8xtiqoc000eochqp2amwn5a" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-豆瓣Vue搭建踩坑" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/31/豆瓣Vue搭建踩坑/" class="article-date">
-  <time datetime="2017-08-31T13:00:11.000Z" itemprop="datePublished">2017-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/31/豆瓣Vue搭建踩坑/">豆瓣Vue搭建踩坑</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-computed"><a href="#1-computed" class="headerlink" title="1. computed"></a>1. computed</h3><ul>
-<li>计算后属性会被添加到vue实例中，可以直接用<code>vue.属性名</code>调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    attr: function()&#123;</div><div class="line">        return xxx</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-vuex-中的getters"><a href="#2-vuex-中的getters" class="headerlink" title="2. vuex 中的getters"></a>2. vuex 中的getters</h3><ul>
-<li>可以当成store的计算属性</li>
-</ul>
-<h3 id="3-vuex-的初步用法"><a href="#3-vuex-的初步用法" class="headerlink" title="3. vuex 的初步用法"></a>3. vuex 的初步用法</h3><ul>
-<li><p>安装vuex</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vuex --save --dev</div></pre></td></tr></table></figure>
-</li>
-<li><p>在src目录下创建store文件夹，并创建index.js文件，文件内引入vuex</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Vuex from &apos;vuex&apos;</div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol>
-<li><p>创建store</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">    state: &#123;&#125;, //数据对象</div><div class="line">    getters: &#123;&#125;,//state派生出的数据，store的计算属性，类似于computed</div><div class="line">    mutations: &#123;&#125;,//mutations触发会改变store的状态/state的数据</div><div class="line">    actions: &#123;&#125;//提交mutations的函数，触发mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>在main.js的Vue实例中绑定store</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import store from &apos;./stote&apos;  </div><div class="line">new Vue(&#123;  </div><div class="line">    el: &apos;#app&apos;,  </div><div class="line">    router,  </div><div class="line">    store,//绑定到根实例中  </div><div class="line">    template: &apos; &lt;App/&gt;&apos;,  </div><div class="line">    components: &#123;App&#125;,  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>分割store模块，再统一导出</p>
-<ul>
-<li>可以在store目录下创建modules目录，分割模块，再在store目录下的index内导出，需要写在store的modules属性内</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//index中</div><div class="line">import example from &apos;./modules/example&apos; </div><div class="line">export default new Vuex.store(&#123;</div><div class="line">    modules: &#123; </div><div class="line">        example</div><div class="line">    &#125;</div><div class="line">    &#125;)</div><div class="line">//example中,把模块当成一个对象导出到index里，再右index中的module接收管理 </div><div class="line">const state = &#123;</div><div class="line">    a: xx,</div><div class="line">    b:xx,</div><div class="line">&#125;</div><div class="line">export default &#123;</div><div class="line">    state</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="router-link-to"><a href="#router-link-to" class="headerlink" title="router-link :to"></a>router-link :to</h3><ul>
-<li>通过to属性指定目标地址，默认渲染为带正确连接的<code>&lt;a&gt;</code>标签</li>
-<li>to 后可带的值:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 字符串 --&gt;</div><div class="line">&lt;router-link to=&quot;home&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 渲染结果 --&gt;</div><div class="line">&lt;a href=&quot;home&quot;&gt;Home&lt;/a&gt;</div><div class="line">&lt;!-- 使用 v-bind 的 JS 表达式 --&gt;</div><div class="line">&lt;router-link v-bind:to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 不写 v-bind 也可以，就像绑定别的属性一样 --&gt;</div><div class="line">&lt;router-link :to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 同上 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;home&apos; &#125;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 命名的路由 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; name: &apos;user&apos;, params: &#123; userId: 123 &#125;&#125;&quot;&gt;User&lt;/router-link&gt;</div><div class="line">&lt;!-- 带查询参数，下面的结果为 /register?plan=private --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;register&apos;, query: &#123; plan: &apos;private&apos; &#125;&#125;&quot;&gt;Register&lt;/router-link&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h3><ul>
-<li>引用单文件组件的时候，用标签标示</li>
-<li><p>子组件使用父组件的数据，需要设置子组件的props选项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;child&apos;, &#123;</div><div class="line">// 声明 props</div><div class="line">props: [&apos;message&apos;],</div><div class="line">// 就像 data 一样，prop 可以用在模板内</div><div class="line">// 同样也可以在vm实例中像“this.message”这样使用</div><div class="line">template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>slot插口</p>
-<ul>
-<li>子组件中有<code>&lt;slot&gt;&lt;/slot&gt;</code>插口，会保留父组件在子组件中写入的内容</li>
-<li>具名slot<ul>
-<li>slot下有个name属性可以在父组件中配置对应的slot内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//父组件  </div><div class="line">&lt;app&gt;</div><div class="line">    &lt;h1 slot=&quot;header&quot;&gt;&lt;/h1&gt;</div><div class="line">    &lt;compotent&gt;&lt;/compotent&gt;</div><div class="line">&lt;/app&gt;  </div><div class="line">//子组件</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;slot name =&quot;header&quot;&gt;&lt;/slot&gt;</div><div class="line">    &lt;div&gt; content&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>组件中引用本地图片，还是按照目录的顺序引用，就算子组件还会被别的组件引用。路径按照引入图片的组件的目录为准</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/08/31/豆瓣Vue搭建踩坑/" data-id="cj8xtiqml0006ochqnolb6fft" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -736,9 +673,9 @@ width: 6em; }
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-HTML/">css HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
     </div>
   </div>
 
@@ -746,16 +683,16 @@ width: 6em; }
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
+      <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css-HTML/" style="font-size: 10px;">css HTML</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/基础知识/" style="font-size: 10px;">基础知识</a> <a href="/tags/微信小程序/" style="font-size: 10px;">微信小程序</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
     </div>
@@ -765,28 +702,28 @@ width: 6em; }
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2017/10/24/Vuex小知识/">Vuex小知识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/初学react/">初学react</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/20/微信小程序初涉/">微信小程序初涉</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/20/css基础知识/">css基础知识</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/19/关于Javascript的小知识/">关于Javascript的小知识</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/18/移动端适配之DevicePixelRatio/">移动端适配之DevicePixelRatio</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/09/vue下使用bootstrap/">vue下使用bootstrap</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/27/Vue中使用Sass/">Vue中使用Sass</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/25/前端模块化简述/">前端模块化简述</a>
           </li>
         
       </ul>
@@ -802,7 +739,7 @@ width: 6em; }
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 FuJing<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

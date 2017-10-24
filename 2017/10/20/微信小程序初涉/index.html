@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于Javascript的小知识 | 符静的个人博客</title>
+  <title>微信小程序初涉 | 符静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. JS的语法槽点 没有块作用域（ES6中let定义的变量拥有块作用域） 诡异的隐式类型转化 作用域自动提升 回调地狱 费解的原型继承 没有模块、命名空间 灵异的this变量 浏览器兼容  2. JS规范版本历史 1997.07 1.0 1998.06 2.0 1999.12 3.0 2007.10 4.0 草稿 2008.07 5.0 *2009 Node Js *2010 npm 2011.">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="页面中的this可以改变，函数中使用app的this，需要设置_this = this 更改数据需要使用setData，这是原型中的函数，需要在组件中调用 修改数组数据，因为有[]表示索引，需要用引号把key值引起来 map是小程序自有标签，样式表中无法修改样式 WebsSocket:基于TCP的一种新网络协议，实现可浏览器与服务器全双工（full-duplex）通信——允许服务器主动发送信息给">
+<meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Javascript的小知识">
-<meta property="og:url" content="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/index.html">
+<meta property="og:title" content="微信小程序初涉">
+<meta property="og:url" content="https://fujingfj.github.io/2017/10/20/微信小程序初涉/index.html">
 <meta property="og:site_name" content="符静的个人博客">
-<meta property="og:description" content="1. JS的语法槽点 没有块作用域（ES6中let定义的变量拥有块作用域） 诡异的隐式类型转化 作用域自动提升 回调地狱 费解的原型继承 没有模块、命名空间 灵异的this变量 浏览器兼容  2. JS规范版本历史 1997.07 1.0 1998.06 2.0 1999.12 3.0 2007.10 4.0 草稿 2008.07 5.0 *2009 Node Js *2010 npm 2011.">
-<meta property="og:image" content="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/2017101901.jpg">
-<meta property="og:updated_time" content="2017-10-19T02:06:44.804Z">
+<meta property="og:description" content="页面中的this可以改变，函数中使用app的this，需要设置_this = this 更改数据需要使用setData，这是原型中的函数，需要在组件中调用 修改数组数据，因为有[]表示索引，需要用引号把key值引起来 map是小程序自有标签，样式表中无法修改样式 WebsSocket:基于TCP的一种新网络协议，实现可浏览器与服务器全双工（full-duplex）通信——允许服务器主动发送信息给">
+<meta property="og:updated_time" content="2017-10-20T12:51:09.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Javascript的小知识">
-<meta name="twitter:description" content="1. JS的语法槽点 没有块作用域（ES6中let定义的变量拥有块作用域） 诡异的隐式类型转化 作用域自动提升 回调地狱 费解的原型继承 没有模块、命名空间 灵异的this变量 浏览器兼容  2. JS规范版本历史 1997.07 1.0 1998.06 2.0 1999.12 3.0 2007.10 4.0 草稿 2008.07 5.0 *2009 Node Js *2010 npm 2011.">
-<meta name="twitter:image" content="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/2017101901.jpg">
+<meta name="twitter:title" content="微信小程序初涉">
+<meta name="twitter:description" content="页面中的this可以改变，函数中使用app的this，需要设置_this = this 更改数据需要使用setData，这是原型中的函数，需要在组件中调用 修改数组数据，因为有[]表示索引，需要用引号把key值引起来 map是小程序自有标签，样式表中无法修改样式 WebsSocket:基于TCP的一种新网络协议，实现可浏览器与服务器全双工（full-duplex）通信——允许服务器主动发送信息给">
   
     <link rel="alternate" href="/atom.xml" title="符静的个人博客" type="application/atom+xml">
   
@@ -66,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-关于Javascript的小知识" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-微信小程序初涉" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/10/19/关于Javascript的小知识/" class="article-date">
-  <time datetime="2017-10-19T01:35:00.000Z" itemprop="datePublished">2017-10-19</time>
+    <a href="/2017/10/20/微信小程序初涉/" class="article-date">
+  <time datetime="2017-10-20T12:49:28.000Z" itemprop="datePublished">2017-10-20</time>
 </a>
     
   </div>
@@ -80,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于Javascript的小知识
+      微信小程序初涉
     </h1>
   
 
@@ -88,45 +86,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-JS的语法槽点"><a href="#1-JS的语法槽点" class="headerlink" title="1. JS的语法槽点"></a>1. JS的语法槽点</h3><ul>
-<li>没有块作用域（ES6中let定义的变量拥有块作用域）</li>
-<li>诡异的隐式类型转化</li>
-<li>作用域自动提升</li>
-<li>回调地狱</li>
-<li>费解的原型继承</li>
-<li>没有模块、命名空间</li>
-<li>灵异的this变量</li>
-<li>浏览器兼容</li>
-</ul>
-<h3 id="2-JS规范版本历史"><a href="#2-JS规范版本历史" class="headerlink" title="2. JS规范版本历史"></a>2. JS规范版本历史</h3><ul>
-<li>1997.07 1.0</li>
-<li>1998.06 2.0</li>
-<li>1999.12 3.0</li>
-<li>2007.10 4.0 草稿</li>
-<li>2008.07 5.0</li>
-<li>*2009 Node Js</li>
-<li>*2010 npm</li>
-<li>2011.06 5.1</li>
-<li>*2012 webpack</li>
-<li>*2013 electron</li>
-<li>2015.06 6(ES6/ES2015)</li>
-<li>2016.06 7(ES7/ES2016)</li>
-<li>2017.06 8(ES8/ES2017)</li>
-</ul>
-<h3 id="3-单线程异步"><a href="#3-单线程异步" class="headerlink" title="3. 单线程异步"></a>3. 单线程异步</h3><ul>
-<li>Javascript是单线程，但浏览器不是单线程<br><img src="2017101901.jpg" alt=""></li>
-<li>左边的栈存储的是同步任务，就是那些能立即执行的，不耗时的任务，如变量和函数的初始化、事件绑定</li>
-<li>右边的堆用来存储变量的声明、对象</li>
-<li>下面的队列就是任务队列。一旦某个异步任务有了响应就会被推入队列中、如用户的点击事件、浏览器收到服务的响应和setTimeout插入的事件。每个异步任务都和一个回调函数相关联</li>
-</ul>
+        <ol>
+<li>页面中的this可以改变，函数中使用app的this，需要设置_this = this</li>
+<li>更改数据需要使用setData，这是原型中的函数，需要在组件中调用</li>
+<li>修改数组数据，因为有[]表示索引，需要用引号把key值引起来</li>
+<li>map是小程序自有标签，样式表中无法修改样式</li>
+<li>WebsSocket:基于TCP的一种新网络协议，实现可浏览器与服务器全双工（full-duplex）通信——允许服务器主动发送信息给客户端</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fujingfj.github.io/2017/10/19/关于Javascript的小知识/" data-id="cj95bpm7c00080shqc7lgzxmj" class="article-share-link">Delen</a>
+      <a data-url="https://fujingfj.github.io/2017/10/20/微信小程序初涉/" data-id="cj95bpm7s000b0shqe09lkn7f" class="article-share-link">Delen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
 
     </footer>
   </div>
@@ -134,19 +108,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/10/20/css基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/23/初学react/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Nieuwer</strong>
       <div class="article-nav-title">
         
-          css基础知识
+          初学react
         
       </div>
     </a>
   
   
-    <a href="/2017/10/18/移动端适配之DevicePixelRatio/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/20/css基础知识/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ouder</strong>
-      <div class="article-nav-title">移动端适配之DevicePixelRatio</div>
+      <div class="article-nav-title">css基础知识</div>
     </a>
   
 </nav>
